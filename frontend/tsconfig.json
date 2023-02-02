@@ -5,6 +5,7 @@
         "jsx": "react-jsx",
         "baseUrl": "src",
         "paths": {
+            "assets/*": ["assets/*"],
             "common/*": ["common/*"],
             "components/*": ["components/*"],
             "pages/*": ["pages/*"],

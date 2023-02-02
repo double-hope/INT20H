@@ -1,16 +1,38 @@
-import { ButtonEnum } from 'common/enums';
+import { BackgroundEnum, ButtonEnum } from 'common/enums';
+import { BackgroundImage } from 'conponents/background';
+import { FlexLayout } from 'conponents/layouts/flex-layout';
 import { Button } from 'conponents/primitives/button/component';
 import { Footer } from 'conponents/primitives/footer';
-import React from 'react'
+import React, { useState } from 'react';
+import { ButtonLayout } from 'conponents/layouts/button-layout';
+import { Modal } from 'conponents/primitives/modal';
+import { SignIn } from 'pages/sign-in';
+import { SignUp } from 'pages/sign-up';
 
 const SignPage = () => {
-  return (
-    <div>
-        <h1>The Sunday bite</h1>
+  const [signInVisible, setSignInVisible] = useState(false);
+  const [signUpVisible, setSignUpVisible] = useState(false);
 
-        <Button variant={ButtonEnum.ACCENT}>dasd</Button>
-        <Footer />
-    </div>
+  return (
+    <>
+      <FlexLayout>
+          <h1>The Sunday bite</h1>
+          <BackgroundImage type={BackgroundEnum.CROPPED} />
+          <ButtonLayout>
+            <Button variant={ButtonEnum.DEFAULT} onClick={() => setSignInVisible(!signInVisible)}>Sign in</Button>
+            <Button variant={ButtonEnum.ACCENT} onClick={() => setSignUpVisible(!signUpVisible)}>Register</Button>
+          </ButtonLayout>
+          <Footer />
+      </FlexLayout>
+
+      <Modal visible={signInVisible}>
+        <SignIn />
+      </Modal>
+
+      <Modal visible={signUpVisible}>
+        <SignUp />
+      </Modal>
+    </>
   )
 }
 

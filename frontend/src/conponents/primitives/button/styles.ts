@@ -14,6 +14,7 @@ export const button = ({ colors, radiuses, spaces, fontSizes, fontWeights }: The
 
     &:hover {
         background-color: ${colors.lightHover};
+        cursor: pointer;
     }
 
 

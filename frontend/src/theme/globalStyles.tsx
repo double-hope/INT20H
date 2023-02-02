@@ -3,6 +3,16 @@ import { css } from '@emotion/react';
 import emotionNormalize from 'emotion-normalize';
 
 export const globalStyles = (theme: Theme) => css`
+  @font-face {
+    font-family: 'Mohave-Regular';
+    src: url('../assets/fonts/Mohave-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Alef-Regular';
+    src: url('../assets/fonts/Alef-Regular.ttf');
+  }
+
   * {
     box-sizing: border-box;
   }
