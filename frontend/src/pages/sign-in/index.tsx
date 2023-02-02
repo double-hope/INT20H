@@ -9,6 +9,7 @@ const SignIn = () => {
 
   const checkUser = (e) => {
     e.preventDefault();
+    console.log({email, password});
   }
 
   return (
