@@ -1,3 +1,5 @@
+import { BackgroundEnum } from 'common/enums';
+import { BackgroundImage } from 'conponents/background';
 import { RecipeLayout } from 'conponents/layouts/recipe-layout';
 import { RecipeItem } from 'conponents/recipe-item';
 import React from 'react';
@@ -13,6 +15,7 @@ const Home = () => {
   const arr = [img1, img2, img3, img4, img5, img6];
   return (
     <>
+      <BackgroundImage type={BackgroundEnum.FILLED} />
       <RecipeLayout>
         {
           arr.map(item => <RecipeItem img={item} item={'dasdad'}></RecipeItem>)

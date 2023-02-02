@@ -4,6 +4,7 @@ export const layout = () => css`
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-auto-rows: minmax(200px, auto);
+    gap: 20px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
