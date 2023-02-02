@@ -24,7 +24,7 @@ const SignPage = () => {
           </ButtonLayout>
           <Footer />
       </FlexLayout>
-
+      
       <Modal visible={signInVisible}>
         <SignIn />
       </Modal>
