@@ -52,7 +52,7 @@ const radiuses = {
   xs: '5px',
   sm: '7px',
   md: '10px',
-  lg: '24px',
+  lg: '40px',
   circle: '50%',
   cardTub: '15px',
 };
@@ -65,7 +65,7 @@ const shadows = {
 };
 
 const borders = {
-  dropdown: `10px solid ${colors.background}`,
+  recipeItem: `10px solid ${colors.background}`,
 };
 
 const opacities = {

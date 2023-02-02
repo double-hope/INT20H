@@ -26,7 +26,6 @@ export const modalContent = ({
 }: Theme) => css`
   position: relative;
   box-shadow: ${shadows.dropdown};
-  border: ${borders.dropdown};
   border-radius: ${radiuses.lg};
   width: fit-content;
   height: fit-content;

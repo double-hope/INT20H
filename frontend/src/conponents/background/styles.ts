@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-import type { Theme } from '@emotion/react';
 const img = require('assets/images/back.png');
 
 export const background = () => css`
