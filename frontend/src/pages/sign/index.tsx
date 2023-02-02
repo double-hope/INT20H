@@ -25,11 +25,11 @@ const SignPage = () => {
           <Footer />
       </FlexLayout>
       
-      <Modal visible={signInVisible}>
+      <Modal visible={signInVisible} setVisible={setSignInVisible}>
         <SignIn />
       </Modal>
 
-      <Modal visible={signUpVisible}>
+      <Modal visible={signUpVisible} setVisible={setSignUpVisible}>
         <SignUp />
       </Modal>
     </>

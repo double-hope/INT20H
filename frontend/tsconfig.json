@@ -8,6 +8,7 @@
             "assets/*": ["assets/*"],
             "common/*": ["common/*"],
             "components/*": ["components/*"],
+            "hooks/*": ["hooks/*"],
             "pages/*": ["pages/*"],
             "providers/*": ["providers/*"]
         }
