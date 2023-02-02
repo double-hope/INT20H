@@ -1,11 +1,7 @@
-declare global {
-    import type { lightTheme } from 'theme';
+import type { lightTheme } from 'theme';
+
+declare module '@emotion/react' {
   
-    module '@emotion/react' {
-      type GlobalTheme = typeof lightTheme;
-  
-      interface Theme extends GlobalTheme {}
-      export const useTheme: () => Theme;
-    }
-  }
-  
+  type GlobalTheme = typeof lightTheme;
+  export interface Theme extends GlobalTheme {}
+}
