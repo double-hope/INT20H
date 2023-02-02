@@ -3,6 +3,6 @@ import type { ReactNode } from 'react';
 
 export type ButtonProps = {
     variant: ButtonEnum;
-    onClick: () => void;
+    onClick: (e: any) => void;
     children: string | ReactNode;
 }
