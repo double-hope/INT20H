@@ -33,10 +33,12 @@ export const capture = ({ colors, radiuses }: Theme) => css`
     top: 0;
     left: 0;
     padding: 20px;
-    font-family: 'Mohave';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    & p {
+        font-family: 'Mohave';
+    }
 `;
 
 export const more = () => css`
