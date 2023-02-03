@@ -4,11 +4,14 @@ const colors = {
     lightHover: '#F1F1F1',
     text: '#000000',
     accent: '#B03F00',
-    accentHover: '#9F3900'
+    accentHover: '#9F3900',
+    dark: '#241E51'
 };
 
 const fontSizes = {
-  h1: '180px',
+  h1: '100px',
+  avatar: '30px',
+  icons: '20px',
   body: '16px',
   button: '18px',
   caption: '12px',

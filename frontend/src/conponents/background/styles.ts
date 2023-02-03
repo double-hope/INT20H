@@ -5,12 +5,12 @@ const img = require('assets/images/back.png');
 export const background = () => css`
     background-image: url(${img});
     filter: blur(4px) brightness(40%);
-    z-index: 0;
+    z-index: -1;
 
     &[background-type=${BackgroundEnum.CROPPED}] {
         position: absolute;
-        width: 1400px;
-        height: 500px;
+        width: 1024px;
+        height: 400px;
         background-size: contain;
         background-repeat: no-repeat;
         left: 50%;

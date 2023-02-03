@@ -2,12 +2,12 @@ import { css } from '@emotion/react';
 import type { Theme } from '@emotion/react';
 
 export const wrapper = () => css`
-    margin: 40px;
+    margin: 0 20px;
     position: relative;
 `;
 
 export const input = ({colors, radiuses, fontSizes}: Theme) => css`
-    background: none;
+    background: ${colors.light};
     color: ${colors.text};
     font-size: 18px;
     padding: 10px;

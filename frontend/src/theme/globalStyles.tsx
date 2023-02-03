@@ -1,20 +1,30 @@
 import type { Theme } from '@emotion/react';
 import { css } from '@emotion/react';
 import emotionNormalize from 'emotion-normalize';
+const alef = require('assets/fonts/Alef-Regular.ttf');
+const mohave = require('assets/fonts/Mohave-Regular.ttf');
+const montserrat = require('assets/fonts/Montserrat-Regular.ttf');
+
 
 export const globalStyles = (theme: Theme) => css`
   @font-face {
-    font-family: 'Mohave-Regular';
-    src: url('../assets/fonts/Mohave-Regular.ttf');
+    font-family: 'Mohave';
+    src: url(${mohave});
   }
 
   @font-face {
-    font-family: 'Alef-Regular';
-    src: url('../assets/fonts/Alef-Regular.ttf');
+    font-family: 'Alef';
+    src: url(${alef});
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url(${montserrat});
   }
 
   * {
     box-sizing: border-box;
+    font-family: 'Alef';
   }
 
   body {
@@ -25,7 +35,6 @@ export const globalStyles = (theme: Theme) => css`
   html,
   body {
     height: 100%;
-    background: ${theme.colors.background};
     color: ${theme.colors.text};
     @media (max-width: ${theme.breakpoints.xl}px) {
       font-size: 14px;
