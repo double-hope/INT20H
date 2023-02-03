@@ -5,8 +5,10 @@
         "jsx": "react-jsx",
         "baseUrl": "src",
         "paths": {
+            "assets/*": ["assets/*"],
             "common/*": ["common/*"],
             "components/*": ["components/*"],
+            "hooks/*": ["hooks/*"],
             "pages/*": ["pages/*"],
             "providers/*": ["providers/*"]
         }

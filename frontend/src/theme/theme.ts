@@ -1,13 +1,19 @@
 const colors = {
     background: '#FFFFFF',
+    light: '#FFFFFF',
+    lightHover: '#F1F1F1',
     text: '#000000',
-    accent: '#B03F00'
+    accent: '#B03F00',
+    accentHover: '#9F3900',
+    dark: '#241E51'
 };
 
 const fontSizes = {
-  h1: '180px',
-  body: '25px',
-  button: '30px',
+  h1: '100px',
+  avatar: '30px',
+  icons: '20px',
+  body: '16px',
+  button: '18px',
   caption: '12px',
 };
 
@@ -49,7 +55,8 @@ const radiuses = {
   xs: '5px',
   sm: '7px',
   md: '10px',
-  lg: '50px',
+  lg: '40px',
+  modal: '24px',
   circle: '50%',
   cardTub: '15px',
 };
@@ -62,7 +69,13 @@ const shadows = {
 };
 
 const borders = {
-  dropdown: `10px solid ${colors.background}`,
+  recipeItem: `10px solid ${colors.background}`,
+};
+
+const opacities = {
+  lg: 0.2,
+  md: 0.4,
+  sm: 0.6,
 };
 
 const zIndex = {
@@ -104,6 +117,7 @@ const lightTheme = {
   mq,
   maxMq,
   zIndex,
+  opacities,
 };
 
 export { lightTheme };
