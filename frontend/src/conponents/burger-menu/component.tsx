@@ -12,6 +12,7 @@ const BurgerMenu = () => {
   const handleClickOutside = useCallback(() => {
     setStyle({});
     if(bodyRef.current) bodyRef.current.style.transform = 'translateX(-80%)';
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   const bodyRef = useOutsideClick(handleClickOutside);
