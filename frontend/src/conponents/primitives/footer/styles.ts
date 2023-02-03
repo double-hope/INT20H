@@ -15,13 +15,3 @@ export const footer = ({ spaces }: Theme) => css`
         margin: 5px;
     }
 `;
-
-export const icons = ({ colors, fontSizes }: Theme) => css`
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    & > * {
-        color: ${colors.dark};
-        font-size: ${fontSizes.icons};
-    }
-`;

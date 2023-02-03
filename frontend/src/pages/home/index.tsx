@@ -1,5 +1,6 @@
 import { BackgroundEnum, InputEnum } from 'common/enums';
 import { BackgroundImage } from 'conponents/background';
+import { BurgerMenu } from 'conponents/burger-menu';
 import { RecipeLayout } from 'conponents/layouts/recipe-layout';
 import { Avatar } from 'conponents/primitives/avatar';
 import { Header } from 'conponents/primitives/header';
@@ -49,6 +50,7 @@ const Home = () => {
         <Input placeholder='' value={filter} setValue={setFilter} type={InputEnum.SEARCH}></Input>
         <Avatar avatar={null} />
       </Header>
+      <BurgerMenu></BurgerMenu>
       <RecipeLayout>
         {
           arr.map(item => <RecipeItem key={item.name} img={item.img} item={item} />)
