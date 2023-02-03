@@ -13,6 +13,12 @@ const SignPage = () => {
   const [signInVisible, setSignInVisible] = useState(false);
   const [signUpVisible, setSignUpVisible] = useState(false);
 
+  const toggleModals = (e) => {
+    e.preventDefault();
+    setSignInVisible(!signInVisible);
+    setSignUpVisible(!signUpVisible);
+  }
+
   return (
     <>
       <FlexLayout>
@@ -26,11 +32,11 @@ const SignPage = () => {
       </FlexLayout>
       
       <Modal visible={signInVisible} setVisible={setSignInVisible}>
-        <SignIn />
+        <SignIn toggleModals={toggleModals} />
       </Modal>
 
       <Modal visible={signUpVisible} setVisible={setSignUpVisible}>
-        <SignUp />
+        <SignUp toggleModals={toggleModals} />
       </Modal>
     </>
   )

@@ -56,3 +56,12 @@ export const globalStyles = (theme: Theme) => css`
 
   ${emotionNormalize}
 `;
+
+export const resetButton = css`
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font: inherit;
+`;

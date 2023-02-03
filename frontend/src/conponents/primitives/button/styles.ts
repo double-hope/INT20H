@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import type { Theme } from '@emotion/react';
 import { ButtonEnum } from 'common/enums';
+import { resetButton } from 'theme';
 
 export const button = ({ colors, radiuses, spaces, fontSizes, fontWeights }: Theme) => css`
     border-radius: ${radiuses.md};
@@ -31,4 +32,10 @@ export const button = ({ colors, radiuses, spaces, fontSizes, fontWeights }: The
                 0 0 1rem #FFAB2D;*/
         } 
     }
+
+    &[button-variant=${ButtonEnum.RESET}] {
+        ${resetButton};
+        color: ${colors.accent};
+    }
+
 `;

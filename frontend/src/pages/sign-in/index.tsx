@@ -5,7 +5,11 @@ import { Input } from 'conponents/primitives/input';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 
-const SignIn = () => {
+type SignInProps = {
+  toggleModals: (value: boolean) => void;
+}
+
+const SignIn = ({ toggleModals }: SignInProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,6 +26,7 @@ const SignIn = () => {
         <Input type={InputEnum.EMAIL} placeholder='Email' value={email} setValue={setEmail}/>
         <Input type={InputEnum.PASSWORD} placeholder='Password' value={password} setValue={setPassword}/>
         <Button variant={ButtonEnum.ACCENT} onClick={checkUser}> Sign in </Button>
+        <Button variant={ButtonEnum.RESET} onClick={toggleModals}> or Sign up </Button>
       </SignLayout>
     </>
   )
