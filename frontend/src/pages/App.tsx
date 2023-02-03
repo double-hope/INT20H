@@ -4,7 +4,7 @@ import { privateRoutes, publicRoutes } from 'router';
 
 const  App: FunctionComponent = (): JSX.Element => {
 
-  const auth = true;
+  const auth = false;
 
   return (
     <BrowserRouter>
