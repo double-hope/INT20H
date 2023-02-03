@@ -4,7 +4,7 @@ import * as styles from './styles';
 
 const BackgroundImage = ({type}: BackgroundProps) => {
   return (
-    <div css={styles.background} background-type={type}></div>
+    <div css={styles.background} background-type={type} />
   )
 }
 

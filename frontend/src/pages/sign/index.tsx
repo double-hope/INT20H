@@ -28,6 +28,7 @@ const SignPage = () => {
             <Button variant={ButtonEnum.DEFAULT} onClick={() => setSignInVisible(!signInVisible)}>Sign in</Button>
             <Button variant={ButtonEnum.ACCENT} onClick={() => setSignUpVisible(!signUpVisible)}>Register</Button>
           </ButtonLayout>
+
           <Footer />
       </FlexLayout>
       
