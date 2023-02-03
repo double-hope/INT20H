@@ -1,4 +1,9 @@
+interface ItemDTO {
+    img: string;
+    name: string;
+}
+
 export type RecipeItemProps = {
     img: string;
-    item: object | string;
+    item: ItemDTO;
 }

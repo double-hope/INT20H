@@ -15,7 +15,32 @@ const img6 = require('assets/images/meal6.png');
 
 
 const Home = () => {
-  const arr = [img1, img2, img3, img4, img5, img6];
+  const arr = [
+    {
+      img:img1,
+      name: 'Name1'
+    }, 
+    {
+      img:img2,
+      name: 'Name2'
+    }, 
+    {
+      img:img3,
+      name: 'Name3'
+    }, 
+    {
+      img:img4,
+      name: 'Name4'
+    }, 
+    {
+      img:img5,
+      name: 'Name5'
+    }, 
+    {
+      img:img6,
+      name: 'Name6'
+    }, 
+  ];
   const [filter, setFilter] = useState('');
 
   return (
@@ -26,7 +51,7 @@ const Home = () => {
       </Header>
       <RecipeLayout>
         {
-          arr.map(item => <RecipeItem key={item} img={item} item={'dasdad'}></RecipeItem>)
+          arr.map(item => <RecipeItem key={item.name} img={item.img} item={item} />)
         }
       </RecipeLayout>
       <BackgroundImage type={BackgroundEnum.FILLED} />

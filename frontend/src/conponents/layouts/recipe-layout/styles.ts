@@ -2,18 +2,16 @@ import { css } from '@emotion/react';
 
 export const wrapper = () => css`
     width: 100%;
-    max-width: 1200px;
+    max-width: 1024px;
     margin: 0 auto;
     color: white;
-    & > * {
-        z-index: 100;
-    }
+    font-size: 2rem;
 `;
 
 export const layout = () => css`
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-auto-rows: minmax(200px, auto);
+    grid-auto-rows: minmax(150px, auto);
     gap: 20px;
     width: 100%;
 
