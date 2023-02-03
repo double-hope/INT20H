@@ -12,11 +12,16 @@ export const wrapper = ({ colors }: Theme) => css`
     }
 
     & li {
+        transition: all .2s;
         background-color: ${colors.text};
         color: ${colors.light};
         border-radius: 100px;
         font-size: 20px;
         padding: 30px 50px 30px 100px;
         margin: 10px;
+    }
+
+    & li:hover {
+        transform: scale(1.1);
     }
 `;
