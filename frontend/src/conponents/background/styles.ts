@@ -11,8 +11,8 @@ export const background = () => css`
         position: absolute;
         width: 1024px;
         height: 400px;
+        background: no-repeat center center;
         background-size: contain;
-        background-repeat: no-repeat;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
@@ -22,6 +22,7 @@ export const background = () => css`
         position: fixed;
         background-size: cover;
         background-attachment: fixed;
+        transform: scale(1.05);
         top: 0;
         bottom: 0;
         left: 0;

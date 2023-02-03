@@ -32,6 +32,18 @@ export const globalStyles = (theme: Theme) => css`
     padding: 0;
   }
 
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color:  ${theme.colors.light};
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: ${theme.colors.dark};
+  }
+
   html,
   body {
     height: 100%;
