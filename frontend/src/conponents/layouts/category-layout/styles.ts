@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { Theme } from '@emotion/react';
 
-export const footer = ({ spaces }: Theme) => css`
+export const wrapper = ({ spaces }: Theme) => css`
     text-align: center;
     & > h1 {
         margin: ${spaces.md};
@@ -11,8 +11,9 @@ export const footer = ({ spaces }: Theme) => css`
         color: #FFFFFF;
         -webkit-text-stroke: 1px black;
     }
-    
-    & > p {
-        margin: 5px;
-    }
+`;
+
+export const flex = () => css`
+    display: flex;
+    gap: 10px;
 `;
