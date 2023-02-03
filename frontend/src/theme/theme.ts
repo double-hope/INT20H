@@ -8,6 +8,13 @@ const colors = {
     dark: '#241E51'
 };
 
+const iconSizes = {
+  xs: '16px',
+  sm: '20px',
+  md: '30px',
+  lg: '35px'
+}
+
 const fontSizes = {
   h1: '100px',
   avatar: '30px',
@@ -106,6 +113,7 @@ const maxMq = Object.keys(breakpoints).map(
 
 const lightTheme = {
   colors,
+  iconSizes,
   fontSizes,
   fontWeights,
   lineHeights,

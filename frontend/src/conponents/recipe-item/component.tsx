@@ -1,6 +1,8 @@
 import React from 'react';
 import * as styles from './styles';
 import { RecipeItemProps } from './types';
+import { Icon } from 'conponents/primitives/icon';
+import { IconColor, IconName } from 'common/enums';
 
 const RecipeItem = ({ img, item }: RecipeItemProps) => {
     
@@ -11,7 +13,7 @@ const RecipeItem = ({ img, item }: RecipeItemProps) => {
           {item.name}
           <div css={styles.more}>
             <p>Learn more</p>
-            <i className="fa-solid fa-arrow-right"></i>
+            <Icon icon={IconName.ARROW_RIGHT} color={IconColor.WHITE} />
           </div>
         </div>
     </div>
