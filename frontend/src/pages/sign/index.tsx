@@ -8,8 +8,6 @@ import { ButtonLayout } from 'conponents/layouts/button-layout';
 import { Modal } from 'conponents/primitives/modal';
 import { SignIn } from 'pages/sign-in';
 import { SignUp } from 'pages/sign-up';
-import { CategoryLayout } from 'conponents/layouts/category-layout';
-import { categoryMock } from 'assets/mocks';
 
 const SignPage = () => {
   const [signInVisible, setSignInVisible] = useState(false);
@@ -30,9 +28,6 @@ const SignPage = () => {
             <Button variant={ButtonEnum.DEFAULT} onClick={() => setSignInVisible(!signInVisible)}>Sign in</Button>
             <Button variant={ButtonEnum.ACCENT} onClick={() => setSignUpVisible(!signUpVisible)}>Register</Button>
           </ButtonLayout>
-          <CategoryLayout name='Recipes' items={categoryMock}/>
-          <CategoryLayout name='Products' items={categoryMock}/>
-          <CategoryLayout name='Stores' items={categoryMock}/>
 
           <Footer />
       </FlexLayout>
