@@ -22,11 +22,10 @@ export const modalContent = ({
   colors,
   radiuses,
   spaces,
-  borders,
 }: Theme) => css`
   position: relative;
   box-shadow: ${shadows.dropdown};
-  border-radius: ${radiuses.lg};
+  border-radius: ${radiuses.modal};
   width: fit-content;
   height: fit-content;
   padding: ${spaces.md};

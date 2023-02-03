@@ -56,6 +56,7 @@ const radiuses = {
   sm: '7px',
   md: '10px',
   lg: '40px',
+  modal: '24px',
   circle: '50%',
   cardTub: '15px',
 };
