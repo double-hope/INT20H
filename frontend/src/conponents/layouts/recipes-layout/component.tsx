@@ -16,7 +16,7 @@ const RecipesLayout = () => {
                 Breakfast
             </div>
             <div css={styles.container}>
-                {recipeBreakfastMock.map(item => <RecipeInfoItem img={item.img} name={item.name} level={item.level} time={item.time} />)}
+                {recipeBreakfastMock.map(item => <RecipeInfoItem key={item.id} item={item} />)}
             </div>
         </FlexLayout>
     </div>

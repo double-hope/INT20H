@@ -12,7 +12,6 @@ import React, { useState } from 'react';
 const Home = () => {
   
   const [filter, setFilter] = useState('');
-
   return (
     <>
       <Header>  
