@@ -5,7 +5,7 @@ export const layout = () => css`
     transform: translateY(-70px);
     max-width: 1024px;
     margin: 0 auto;
-    & *{
+    & *:not(i){
         font-family: 'Mohave';
     }
 `;
