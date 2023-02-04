@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Header>  
-        <Input placeholder='' value={filter} setValue={setFilter} type={InputEnum.SEARCH}></Input>
+        <Input placeholder='' value={filter} setValue={setFilter} type={InputEnum.SEARCH} />
         <Avatar avatar={null} />
       </Header>
       <BurgerMenu />
