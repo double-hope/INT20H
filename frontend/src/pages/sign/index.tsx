@@ -1,4 +1,4 @@
-import { BackgroundEnum, ButtonEnum } from 'common/enums';
+import { BackgroundEnum, ButtonEnum, FlexLayoutEnum } from 'common/enums';
 import { BackgroundImage } from 'conponents/background';
 import { FlexLayout } from 'conponents/layouts/flex-layout';
 import { Button } from 'conponents/primitives/button/component';
@@ -21,7 +21,7 @@ const SignPage = () => {
 
   return (
     <>
-      <FlexLayout>
+      <FlexLayout type={FlexLayoutEnum.STRETCH}>
           <h1>The Sunday bite</h1>
           <BackgroundImage type={BackgroundEnum.CROPPED} />
           <ButtonLayout>

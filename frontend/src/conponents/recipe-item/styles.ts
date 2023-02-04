@@ -4,7 +4,7 @@ import type { Theme } from '@emotion/react';
 export const wrapper = ({ colors, radiuses }: Theme) => css`
     position: relative;
     border: 10px solid ${colors.background};
-    border-radius: ${radiuses.lg};
+    border-radius: ${radiuses.xlg};
     z-index: 1;
 
     & img {

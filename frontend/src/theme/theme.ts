@@ -17,7 +17,8 @@ const iconSizes = {
 
 const fontSizes = {
   h1: '100px',
-  avatar: '30px',
+  heading: '40px',
+  category: '30px',
   icons: '20px',
   body: '16px',
   button: '18px',
@@ -62,7 +63,8 @@ const radiuses = {
   xs: '5px',
   sm: '7px',
   md: '10px',
-  lg: '40px',
+  lg: '30px',
+  xlg: '40px',
   modal: '24px',
   circle: '50%',
   cardTub: '15px',
