@@ -25,11 +25,6 @@ export const button = ({ colors, radiuses, spaces, fontSizes, fontWeights }: The
 
        &:hover {
         background-color: ${colors.accentHover};
-           /*   box-shadow: 0 0 .2rem #fff,
-                0 0 .2rem #fff,
-                0 0 .8rem #FFAB2D,
-                0 0 .5rem #FFAB2D,
-                0 0 1rem #FFAB2D;*/
         } 
     }
 

@@ -1,9 +1,5 @@
-import { LevelEnum } from "common/enums";
+import { recipeDTO } from "assets/mocks";
 
 export type RecipeInfoItemProps = {
-    img: string;
-    name: string;
-    level: LevelEnum;
-    time: string;
-    // item: object;
+    item: recipeDTO;
 }

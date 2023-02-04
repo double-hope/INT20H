@@ -34,38 +34,52 @@ export const recipeMock = [
   }, 
 ];
 
-export const recipeBreakfastMock = [
+export interface recipeDTO {
+  id: string;
+  img: string;
+  name: string;
+  level: LevelEnum;
+  time: string;
+}
+
+export const recipeBreakfastMock: recipeDTO[] = [
   {
+    id: '1',
     img: img1,
     name: 'Name1',
     level: LevelEnum.EASY,
     time: '3 min'
   }, 
   {
+    id: '2',
     img: img2,
     name: 'Name2',
     level: LevelEnum.MEDIUM,
     time: '3 min'
   }, 
   {
+    id: '3',
     img: img3,
     name: 'Name3',
     level: LevelEnum.HARD,
     time: '3 min'
   }, 
   {
+    id: '4',
     img: img4,
     name: 'Name4',
     level: LevelEnum.EASY,
     time: '3 min'
   }, 
   {
+    id: '5',
     img: img5,
     name: 'Name5',
     level: LevelEnum.MEDIUM,
     time: '3 hour'
   }, 
   {
+    id: '6',
     img: img6,
     name: 'Name6',
     level: LevelEnum.HARD,
