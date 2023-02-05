@@ -13,11 +13,11 @@ const Profile = () => {
     <>
       <DefaultLayout>
         <Navigation>
-          <PageLink pageUrl='recipes' categoryName='Recipes'/>
-          <PageLink pageUrl='products' categoryName='Products'/>
+          <PageLink pageUrl='meals' categoryName='Meals'/>
+          <PageLink pageUrl='ingredients' categoryName='Ingredients'/>
           <PageLink pageUrl='shops' categoryName='Shops'/>
-          <PageLink pageUrl='my-recipes' categoryName='My recipes'/>
-          <PageLink pageUrl='my-products' categoryName='My products'/>
+          <PageLink pageUrl='my-meals' categoryName='My meals'/>
+          <PageLink pageUrl='my-ingredients' categoryName='My ingredients'/>
         </Navigation>
         <Footer type={FooterEnum.LIGHT} />
       </DefaultLayout>

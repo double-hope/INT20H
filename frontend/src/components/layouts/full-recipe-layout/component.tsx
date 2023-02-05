@@ -34,7 +34,7 @@ const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
                         <p>{item.level}</p>
                     </div>
                 </div>
-                <div css={[styles.defaultWrapper, styles.products]}>
+                <div css={[styles.defaultWrapper]}>
 
                 </div>
                 
@@ -49,6 +49,8 @@ const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
                 
                 <div css={[styles.defaultWrapper, styles.video]}>
                     <h3>Video Tutorial</h3>
+                    <iframe title='unique' width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                    </iframe>
                     <video controls preload="metadata">
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4#t=0.5" type="video/mp4" />
                     </video>

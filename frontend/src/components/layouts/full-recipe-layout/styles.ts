@@ -70,10 +70,6 @@ export const item = ({ colors, radiuses, fontSizes }: Theme) => css`
 
 `;
 
-export const products = ({ colors, radiuses }: Theme) => css`
-    
-`;
-
 export const recipe = ({ fontSizes, radiuses, colors }: Theme) => css`
     
     display: flex;

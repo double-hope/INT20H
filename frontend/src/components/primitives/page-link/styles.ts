@@ -12,7 +12,7 @@ export const wrapper = ({ colors, fontSizes, radiuses }: Theme) => css`
     transition: all .2s;
     cursor: pointer;
     font-family: 'Montserrat';
-    font-size: ${fontSizes.category};
+    font-size: ${fontSizes.icons};
     color: ${colors.light};
     text-decoration: none;
 

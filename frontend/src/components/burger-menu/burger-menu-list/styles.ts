@@ -17,7 +17,7 @@ export const wrapper = ({ colors }: Theme) => css`
         color: ${colors.light};
         border-radius: 100px;
         font-size: 20px;
-        padding: 30px 50px 30px 100px;
+        padding: 20px 50px 20px 100px;
         margin: 10px;
     }
 
