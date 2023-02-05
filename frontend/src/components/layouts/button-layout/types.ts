@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
  
 export type ButtonLayoutProps = {
-    children: ReactNode[];
+    children: string | ReactNode | ReactNode[];
 }
