@@ -24,6 +24,7 @@ export const image = ({ radiuses, colors, fontSizes }: Theme) => css`
     }
 
     & div {
+        cursor: pointer;
         z-index: 3;
         position: absolute;
         border-radius: ${radiuses.circle};
@@ -39,7 +40,7 @@ export const image = ({ radiuses, colors, fontSizes }: Theme) => css`
         font-family: 'Mohave';
         font-size: ${fontSizes.heading};
         color: ${colors.light};
-        &[added-item='false'] {
+        &[added-item='true'] {
             background-color: ${colors.accent};
         }
     }
