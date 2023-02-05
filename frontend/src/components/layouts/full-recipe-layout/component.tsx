@@ -5,6 +5,7 @@ import { FlexLayoutEnum, FooterEnum, IconColor, IconName } from 'common/enums';
 import { FlexLayout } from '../flex-layout';
 import { Icon } from 'components/primitives/icon';
 import { Footer } from 'components/primitives/footer';
+import { ProductFlagItem } from 'components/product-flag-item';
 
 const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
     const headerRef = useRef<HTMLDivElement>();
@@ -14,7 +15,7 @@ const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
             <FlexLayout type={FlexLayoutEnum.DEFAULT}>
                 <div ref={headerRef} css={[styles.defaultWrapper, styles.heading]}>
                     <p>{item.name}</p>
-                    <p>Recipes <Icon icon={IconName.ARROW_RIGHT} color={IconColor.BLACK}/> Sause</p>
+                    <p>Meals <Icon icon={IconName.ARROW_RIGHT} color={IconColor.BLACK}/> Sause</p>
                     {/* HERE WILL BE CATEGORY */}
                 </div>
                 <div css={styles.item}>
@@ -34,8 +35,9 @@ const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
                         <p>{item.level}</p>
                     </div>
                 </div>
-                <div css={[styles.defaultWrapper]}>
-
+                <div css={[styles.defaultWrapper, styles.products]}>
+                    <h3>Products</h3>
+                    <ProductFlagItem amount='1 cup' name='mayounnaise'/>
                 </div>
                 
                 <div css={[styles.defaultWrapper, styles.recipe]}>

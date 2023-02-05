@@ -70,6 +70,18 @@ export const item = ({ colors, radiuses, fontSizes }: Theme) => css`
 
 `;
 
+export const products = ({ fontSizes, radiuses, colors }: Theme) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: ${fontSizes.icons};
+
+    & h3 {
+        font-size: ${fontSizes.category};
+    }
+`;
+
 export const recipe = ({ fontSizes, radiuses, colors }: Theme) => css`
     
     display: flex;
