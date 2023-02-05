@@ -1,17 +1,15 @@
 import { recipeMock } from 'assets/mocks';
-import { BackgroundEnum, InputEnum } from 'common/enums';
+import { BackgroundEnum } from 'common/enums';
 import { BackgroundImage } from 'components/background';
 import { BurgerMenu } from 'components/burger-menu';
 import { RecipeLayout } from 'components/layouts/recipe-layout';
 import { Avatar } from 'components/primitives/avatar';
 import { Header } from 'components/primitives/header';
-import { Input } from 'components/primitives/input';
 import { RecipeItem } from 'components/recipe-item';
-import React, { useState } from 'react';
+import React from 'react';
 
 const Recipes = () => {
   
-  const [filter, setFilter] = useState('');
   return (
     <>
       <Header>  
