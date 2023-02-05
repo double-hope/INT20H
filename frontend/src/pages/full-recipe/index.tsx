@@ -1,8 +1,8 @@
 import { recipeBreakfastMock } from 'assets/mocks';
 import { BackgroundEnum } from 'common/enums';
-import { BackgroundImage } from 'conponents/background';
-import { BurgerMenu } from 'conponents/burger-menu';
-import { FullRecipeLayout } from 'conponents/layouts/full-recipe-layout';
+import { BackgroundImage } from 'components/background';
+import { BurgerMenu } from 'components/burger-menu';
+import { FullRecipeLayout } from 'components/layouts/full-recipe-layout';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
