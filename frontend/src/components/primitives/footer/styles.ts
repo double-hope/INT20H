@@ -4,6 +4,9 @@ import { FooterEnum } from 'common/enums';
 
 export const footer = ({ spaces, colors }: Theme) => css`
     text-align: center;
+    margin: 0 auto;
+    max-width: 500px;
+
     & > h1 {
         margin: ${spaces.md};
         font-family: 'Montserrat';

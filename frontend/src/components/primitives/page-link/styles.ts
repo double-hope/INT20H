@@ -11,13 +11,10 @@ export const wrapper = ({ colors, fontSizes, radiuses }: Theme) => css`
     border-radius: ${radiuses.md};
     transition: all .2s;
     cursor: pointer;
-
-    & *:not(i) {
-        font-family: 'Montserrat';
-        font-size: ${fontSizes.category};
-        color: ${colors.light};
-        text-decoration: none;
-    }
+    font-family: 'Montserrat';
+    font-size: ${fontSizes.category};
+    color: ${colors.light};
+    text-decoration: none;
 
     &:hover {
         background-color: ${colors.accent};

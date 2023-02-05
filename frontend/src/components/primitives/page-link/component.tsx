@@ -7,10 +7,10 @@ import { IconColor, IconName } from 'common/enums';
 
 const PageLink = ({ pageUrl, categoryName }: PageLinkProps) => {
   return (
-    <div css={styles.wrapper}>
-        <Link to={`${pageUrl}`}>{categoryName}</Link>
+      <Link css={styles.wrapper} to={`${pageUrl}`}>
+        {categoryName}
         <Icon icon={IconName.ARROW_RIGHT} color={IconColor.WHITE}/>
-    </div>
+      </Link>
   )
 }
 

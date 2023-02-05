@@ -22,10 +22,11 @@ export const background = () => css`
         position: fixed;
         background-size: cover;
         background-attachment: fixed;
-        transform: scale(1.05);
+        transform: scale(1.05); 
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
+        max-height: 100vh;
     }
 `;
