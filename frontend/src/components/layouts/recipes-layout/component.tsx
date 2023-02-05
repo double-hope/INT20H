@@ -3,7 +3,7 @@ import { FlexLayout } from '../flex-layout';
 import * as styles from './styles';
 import { FlexLayoutEnum } from 'common/enums';
 import { recipeBreakfastMock } from 'assets/mocks';
-import { RecipeInfoItem } from 'conponents/recipe-info-item';
+import { RecipeInfoItem } from 'components/recipe-info-item';
 
 const RecipesLayout = () => {
   return (

@@ -1,7 +1,7 @@
 import { ButtonEnum, InputEnum } from 'common/enums';
-import { SignLayout } from 'conponents/layouts/sign-layout';
-import { Button } from 'conponents/primitives/button/component';
-import { Input } from 'conponents/primitives/input';
+import { SignLayout } from 'components/layouts/sign-layout';
+import { Button } from 'components/primitives/button/component';
+import { Input } from 'components/primitives/input';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 

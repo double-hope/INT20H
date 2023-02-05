@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { FullRecipeLayoutProps } from './types';
 import * as styles from './styles';
-import { FlexLayoutEnum, IconColor, IconName } from 'common/enums';
+import { FlexLayoutEnum, FooterEnum, IconColor, IconName } from 'common/enums';
 import { FlexLayout } from '../flex-layout';
-import { Icon } from 'conponents/primitives/icon';
-import { Footer } from 'conponents/primitives/footer';
+import { Icon } from 'components/primitives/icon';
+import { Footer } from 'components/primitives/footer';
 
 const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
     const headerRef = useRef<HTMLDivElement>();
@@ -53,9 +53,7 @@ const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4#t=0.5" type="video/mp4" />
                     </video>
                 </div>
-                <div css={styles.footer}>
-                    <Footer />
-                </div>
+                <Footer type={FooterEnum.LIGHT} />
                 
             </FlexLayout>
         </div>

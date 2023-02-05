@@ -1,6 +1,6 @@
 import React from 'react'
 import { CategoryLayoutProps } from './types';
-import { CategoryItem } from 'conponents/category-item';
+import { CategoryItem } from 'components/category-item';
 import * as styles from './styles';
 
 const CategoryLayout = ({ name, items }: CategoryLayoutProps) => {

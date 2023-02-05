@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import * as styles from './styles';
 import { BurgerMenuList } from './burger-menu-list';
-import { SocialIcons } from 'conponents/primitives/social';
+import { SocialIcons } from 'components/primitives/social';
 import { useOutsideClick } from 'hooks/use-outside-click';
 
 const BurgerMenu = () => {

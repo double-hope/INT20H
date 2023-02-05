@@ -5,3 +5,4 @@ export * from './icons';
 export * from './iconColor';
 export * from './flexLayout';
 export * from './recipe';
+export * from './footer';

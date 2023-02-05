@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './styles';
 import { RecipeInfoItemProps } from './types';
-import { Icon } from 'conponents/primitives/icon';
+import { Icon } from 'components/primitives/icon';
 import { IconColor, IconName } from 'common/enums';
 import { Link } from 'react-router-dom';
 

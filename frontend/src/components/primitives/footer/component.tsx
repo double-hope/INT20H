@@ -1,11 +1,12 @@
 import React from 'react';
 import * as styles from './styles';
 import { SocialIcons } from '../social';
+import { FooterProps } from './types';
 
-const Footer = () => {
+const Footer = ({ type }: FooterProps) => {
 
   return (
-    <div css={styles.footer}>
+    <div css={styles.footer} footer-type={type}>
         <h1>Contacts</h1>
         
         <SocialIcons />

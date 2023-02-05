@@ -135,10 +135,3 @@ export const video = ({ fontSizes }: Theme) => css`
         width: 90%;
     }
 `;
-
-export const footer = ({ colors }: Theme) => css`
-    & * {
-        -webkit-text-stroke-color: white !important;
-        color: ${colors.light} !important;
-    }
-`;
