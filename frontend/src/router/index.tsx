@@ -1,4 +1,4 @@
-import { SignPage, CategoryRecipes, FullRecipe, Ingredients, Meals, Profile } from 'pages';
+import { SignPage, CategoryRecipes, FullRecipe, Ingredients, Meals, Profile, CategoryIngredients } from 'pages';
 
 export const privateRoutes = [
     {path: `/`, element: <Profile />},
@@ -6,6 +6,7 @@ export const privateRoutes = [
     {path: '/recipes/category', element: <CategoryRecipes />},
     {path: `/recipes/category/:id`, element: <FullRecipe />},
     {path: `/ingredients`, element: <Ingredients />},
+    {path: `/ingredients/:category`, element: <CategoryIngredients />},
 
 ]
 

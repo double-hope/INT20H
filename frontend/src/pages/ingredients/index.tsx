@@ -6,7 +6,7 @@ import { IngredientsLayout } from 'components/layouts/ingredients-layout';
 import { Avatar } from 'components/primitives/avatar';
 import { Footer } from 'components/primitives/footer';
 import { Header } from 'components/primitives/header';
-import { ProductItem } from 'components/product-item';
+import { IngredientsItem } from 'components/ingredients-item';
 import React from 'react';
 
 const Ingredients = () => {
@@ -16,7 +16,7 @@ const Ingredients = () => {
         <Avatar avatar={null} />
       </Header>
       <IngredientsLayout>
-        {recipeMock.map(item => <ProductItem name={item.name} img={item.img} />)}
+        {recipeMock.map(item => <IngredientsItem name={item.name} img={item.img} />)}
       </IngredientsLayout>
       <Footer type={FooterEnum.LIGHT} />
       <BackgroundImage type={BackgroundEnum.FILLED} />
