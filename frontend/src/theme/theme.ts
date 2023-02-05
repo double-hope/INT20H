@@ -5,7 +5,9 @@ const colors = {
     text: '#000000',
     accent: '#B03F00',
     accentHover: '#9F3900',
-    dark: '#241E51'
+    dark: '#241E51',
+    green: '#1A750B',
+    black: '#000000'
 };
 
 const iconSizes = {

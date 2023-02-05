@@ -1,11 +1,11 @@
 import React from 'react';
 import * as styles from './styles';
-import { RecipeLayoutProps } from './types';
+import { IngredientsLayoutProps } from './types';
 
-const RecipeLayout = ({ children }: RecipeLayoutProps) => {
+const IngredientsLayout = ({ children }: IngredientsLayoutProps) => {
   return (
     <div css={styles.wrapper}>
-      <h1>Recipes</h1>
+      <h1>Ingredients</h1>
       <div css={styles.layout}>
           {children}
       </div>
@@ -13,4 +13,4 @@ const RecipeLayout = ({ children }: RecipeLayoutProps) => {
   )
 }
 
-export { RecipeLayout };
+export { IngredientsLayout };

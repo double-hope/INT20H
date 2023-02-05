@@ -22,11 +22,11 @@ export const wrapper = ({ colors, radiuses }: Theme) => css`
 `;
 
 export const capture = ({ colors, radiuses }: Theme) => css`
-    transition: 0.2s ease-out; 
+    transition: .2s ease-out; 
     opacity: 0;
     position: absolute;
     background-color: rgba(176, 63, 0, 0.8);
-    border-radius: 30px;
+    border-radius: ${radiuses.lg};
     width: 100%;
     height: 100%;
     z-index: 1;

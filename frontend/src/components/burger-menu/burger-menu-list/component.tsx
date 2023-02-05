@@ -5,9 +5,12 @@ const BurgerMenuList = () => {
   return (
     <div css={styles.wrapper}>
         <ul>
-            <li>All recipes</li>
-            <li>My recipes</li>
-            <li>My products</li>
+            <li>My account</li>
+            <li>Meals</li>
+            <li>My meals</li>
+            <li>Ingredients</li>
+            <li>My ingredients</li>
+            <li>Grosseries</li>
             <li>Log out</li>
         </ul>
     </div>

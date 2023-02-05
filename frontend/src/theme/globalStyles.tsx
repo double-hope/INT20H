@@ -37,11 +37,11 @@ export const globalStyles = (theme: Theme) => css`
   }
   
   body::-webkit-scrollbar-track {
-    background-color:  ${theme.colors.light};
+    background-color: ${theme.colors.black};
   }
   
   body::-webkit-scrollbar-thumb {
-    background-color: ${theme.colors.dark};
+    background-color: ${theme.colors.light};
   }
 
   html,
