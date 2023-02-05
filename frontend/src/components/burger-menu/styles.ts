@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { Theme } from '@emotion/react';
 
 export const burgerMenu = ({ colors }: Theme) => css`
-    z-index: 2;
+    z-index: 10;
     background-color: ${colors.background};
     position: fixed;
     top: 0;
