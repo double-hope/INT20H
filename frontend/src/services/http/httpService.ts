@@ -4,8 +4,8 @@ export let statusCode;
 
 interface HttpProps {
     method: HttpMethodEnum;
-    payload: BodyInit;
-    contentType: string;
+    payload?: BodyInit;
+    contentType?: string;
 }
 
 class Http {

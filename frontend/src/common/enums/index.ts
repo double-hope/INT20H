@@ -7,3 +7,4 @@ export * from './flexLayout';
 export * from './recipe';
 export * from './footer';
 export * from './http';
+export * from './api';
