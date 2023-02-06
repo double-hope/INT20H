@@ -25,7 +25,6 @@ class Meals {
         });
     }
 
-
     getMealByFirstLetter(params) {
         const query = !!params.sort ? '?' + this._getQueryString(params) : '';
         return this._http.load(this._getUrl(query), {
