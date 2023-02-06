@@ -1,8 +1,15 @@
 const enum ActionType {
-    GET_ALL = '/',
-    DELETE = '/:id',
-    GET = '/:id',
-    UPDATE = '/:id',
+    GET_ALL = '/users/all',
+    GET = '/user',
+    UPDATE = '/update-user',
+    DELETE = '/delete-user',
 };
 
-export { ActionType };
+const enum PathType {
+    GET_ALL = '/',
+    GET = '/:id',
+    UPDATE = '/:id',
+    DELETE = '/:id',
+};
+
+export { ActionType, PathType };
