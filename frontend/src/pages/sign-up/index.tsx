@@ -1,9 +1,11 @@
-import { ButtonEnum, InputEnum } from 'common/enums';
-import { SignLayout } from 'conponents/layouts/sign-layout';
-import { Button } from 'conponents/primitives/button/component';
-import { Input } from 'conponents/primitives/input';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { ButtonEnum, DataStatusEnum, InputEnum } from 'common/enums';
+import { SignLayout } from 'components/layouts/sign-layout';
+import { Button } from 'components/primitives/button/component';
+import { Input } from 'components/primitives/input';
+import { AuthContext } from 'context/auth';
+import { useAppDispatch, useAppSelector } from 'hooks/store';
+import React, { useContext, useEffect, useState } from 'react';
+import { signUp } from 'store/auth';
 
 type SignUpProps = {
   toggleModals: (value: boolean) => void;
@@ -12,24 +14,42 @@ type SignUpProps = {
 const SignUp = ({ toggleModals }: SignUpProps) => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
-  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { status, tokens } = useAppSelector(state => state.auth);
+  const { setAuth } = useContext(AuthContext);
 
   const addUser = (e) => {
     e.preventDefault();
-    console.log({name, surname, phone, email, password});
-    navigate('/home');
+
+    const user = {
+      firstName: name, 
+      lastName: name,
+      email, 
+      password,
+    }
+
+    dispatch(signUp(user));
   }
+
+  useEffect(() => {
+    if(status === DataStatusEnum.SUCCESS) {
+      sessionStorage.setItem('accessToken', tokens.accessToken);
+      sessionStorage.setItem('refreshToken', tokens.refreshToken);
+      setAuth(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status]);
+
+  console.log(tokens);
 
   return (
     <>
       <SignLayout>
         <Input type={InputEnum.TEXT} placeholder='First name' value={name} setValue={setName}/>
         <Input type={InputEnum.TEXT} placeholder='Last name' value={surname} setValue={setSurname}/>
-        <Input type={InputEnum.PHONE} placeholder='Phone' value={phone} setValue={setPhone}/>
         <Input type={InputEnum.EMAIL} placeholder='Email' value={email} setValue={setEmail}/>
         <Input type={InputEnum.PASSWORD} placeholder='Password' value={password} setValue={setPassword}/>
         <Button variant={ButtonEnum.ACCENT} onClick={addUser}> Sign up </Button>

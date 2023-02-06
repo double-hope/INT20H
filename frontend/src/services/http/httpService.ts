@@ -1,0 +1,67 @@
+import { HttpHeaderEnum, HttpMethodEnum } from 'common/enums';
+
+export let statusCode;
+
+interface HttpProps {
+    method: HttpMethodEnum;
+    payload?: BodyInit;
+    contentType?: string;
+}
+
+class Http {
+    load(url, options: HttpProps){
+        const { method = HttpMethodEnum.GET, payload = null, contentType } = options;
+        const headers = this._getHeaders({
+            contentType,
+        });
+
+        return fetch(url, {
+            method,
+            headers,
+            body: payload,
+        })
+            .then(this._checkStatus)
+            .then(this._parseJSON)
+            .catch(this._throwError);
+    }
+
+    _getHeaders({ contentType }) {
+        const headers = new Headers();
+        
+        if (contentType) {
+            headers.append(HttpHeaderEnum.CONTENT_TYPE, contentType);
+        }
+
+        if(sessionStorage.getItem('token')) {
+            headers.append(HttpHeaderEnum.AUTHORIZATION, `Bearer ${sessionStorage.getItem('token')}`);
+        }
+
+        return headers;
+    }
+
+    _checkStatus(response) {
+        const { ok: isOk, status, statusText } = response;
+
+        statusCode = status;
+
+        if( status === 401){
+            console.log('log-out');
+        }
+
+        if (!isOk) {
+            throw new Error(`${status}: ${statusText}`);
+        }
+
+        return response;
+    }
+
+    _parseJSON(response) {
+        return response.json();
+    }
+
+    _throwError(err) {
+        throw err;
+    }
+}
+
+export { Http };

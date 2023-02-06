@@ -1,11 +1,12 @@
-import { FunctionComponent } from 'react';
+import { AuthContext } from 'context/auth';
+import { FunctionComponent, useContext } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { privateRoutes, publicRoutes } from 'router';
 
 const  App: FunctionComponent = (): JSX.Element => {
 
-  const auth = false;
-
+  const { auth } = useContext(AuthContext);
+  
   return (
     <BrowserRouter>
       { auth ?

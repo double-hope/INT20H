@@ -1,4 +1,4 @@
-import { CategoryDTO } from "conponents/layouts/category-layout/types";
+import { CategoryDTO } from 'components/layouts/category-layout/types';
 
 const img1 = require('assets/images/img1.jpg');
 const img2 = require('assets/images/img2.jpg');
