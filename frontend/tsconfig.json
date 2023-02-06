@@ -8,9 +8,12 @@
             "assets/*": ["assets/*"],
             "common/*": ["common/*"],
             "components/*": ["components/*"],
+            "context/*": ["context/*"],
             "hooks/*": ["hooks/*"],
             "pages/*": ["pages/*"],
-            "providers/*": ["providers/*"]
+            "providers/*": ["providers/*"],
+            "store/*": ["store/*"],
+            "utils/*": ["utils/*"]
         }
     },
     "include": [

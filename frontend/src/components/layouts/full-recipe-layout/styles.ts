@@ -82,6 +82,17 @@ export const products = ({ fontSizes, radiuses, colors }: Theme) => css`
     }
 `;
 
+export const productsAmount = ({ fontSizes, radiuses, colors }: Theme) => css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    font-size: ${fontSizes.icons};
+
+    & h3 {
+        font-size: ${fontSizes.category};
+    }
+`;
+
 export const recipe = ({ fontSizes, radiuses, colors }: Theme) => css`
     
     display: flex;

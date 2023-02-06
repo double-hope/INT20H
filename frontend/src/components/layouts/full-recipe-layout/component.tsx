@@ -37,7 +37,15 @@ const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
                 </div>
                 <div css={[styles.defaultWrapper, styles.products]}>
                     <h3>Products</h3>
-                    <ProductFlagItem amount='1 cup' name='mayounnaise'/>
+                    <div css={styles.productsAmount}>
+                        <ProductFlagItem amount='1 cup' name='mayounnaise'/>
+                        <ProductFlagItem amount='1 cup' name='mayounnaise'/>
+                        <ProductFlagItem amount='1 cup' name='mayounnaise'/>
+                        <ProductFlagItem amount='1 cup' name='mayounnaise'/>
+                        <ProductFlagItem amount='1 cup' name='mayounnaise'/>
+                        <ProductFlagItem amount='1 cup' name='mayounnaise'/>
+                    </div>
+
                 </div>
                 
                 <div css={[styles.defaultWrapper, styles.recipe]}>

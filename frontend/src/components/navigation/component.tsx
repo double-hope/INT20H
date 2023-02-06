@@ -7,6 +7,7 @@ const Navigation = ({ children }: NavigationProps) => {
     <div css={styles.wrapper}>
         <h3>My account</h3>
         <div css={styles.links}>{children}</div>
+        <div css={styles.logOut}>Log out</div>
     </div>
   )
 }

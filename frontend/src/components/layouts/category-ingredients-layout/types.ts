@@ -6,4 +6,5 @@ export interface CategoryDTO {
 export type CategoryIngredientsLayoutProps = {
     name: string;
     items: CategoryDTO[];
+    myIngredientsLayout: boolean;
 }

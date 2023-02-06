@@ -7,12 +7,12 @@ export const wrapper = ({ colors, fontSizes, radiuses }: Theme) => css`
     position: relative;
     background-color: ${colors.text};
     width: 300px;
-    padding: 50px;
+    padding: 40px;
     border-radius: ${radiuses.md};
     transition: all .2s;
     cursor: pointer;
-    font-family: 'Montserrat';
-    font-size: ${fontSizes.icons};
+    font-family: 'Alef';
+    font-size: ${fontSizes.category};
     color: ${colors.light};
     text-decoration: none;
 
