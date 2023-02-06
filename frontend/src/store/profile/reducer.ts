@@ -2,10 +2,62 @@ import { createReducer } from "@reduxjs/toolkit";
 import { DataStatusEnum } from "common/enums";
 import { addIngredientToProfile, addMealToProfile, deleteIngredientFromProfile, deleteMealFromProfile, getSavedIngredients, getSavedMeals } from "./actions";
 
+interface Recipe {
+    recipeComplexity: string;
+    steps: [string];
+}
+
+interface Meal {
+    idMeal: string;
+    ingredients: {};
+    recipe: Recipe;
+    strArea: string;
+    strCategory: string;
+    strMeal: string;
+    strMealThumb: string;
+    strTags: [string];
+    strYoutube: string;
+}
+
+interface Ingredient {
+    idIngredient: string;
+    strDescription: string;
+    strIngredient: string;
+    strType: string;
+}
+
+const RECIPE_INITIAL_STATE: Recipe = {
+    recipeComplexity: null,
+    steps: [null],
+}
+
+const MEAL_INITIAL_STATE: Meal = {
+    idMeal: null,
+    ingredients: {},
+    recipe: RECIPE_INITIAL_STATE,
+    strArea: null,
+    strCategory: null,
+    strMeal: null,
+    strMealThumb: null,
+    strTags: [null],
+    strYoutube: null,
+}
+
+const MEALS_INITIAL_STATE: typeof MEAL_INITIAL_STATE[] = [];
+
+const INGREDIENT_INITIAL_STATE: Ingredient = {
+    idIngredient: null,
+    strDescription: null,
+    strIngredient: null,
+    strType: null,
+}
+
+const INGREDIENTS_INITIAL_STATE: typeof INGREDIENT_INITIAL_STATE[] = [];
+
 const initialState = {
-    usersMeals: [],
+    usersMeals: MEALS_INITIAL_STATE,
     usersMeal: null,
-    usersIngredients: [],
+    usersIngredients: INGREDIENTS_INITIAL_STATE,
     usersIngredient: null,
     status: DataStatusEnum.IDLE
 }

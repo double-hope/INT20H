@@ -2,8 +2,44 @@ import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
 import { getMealByExternalId, getMealByFirstLetter, getAvailableMealsByFirstLetter } from './actions';
 
+interface Recipe {
+    recipeComplexity: string;
+    steps: [string];
+}
+
+interface Meal {
+    idMeal: string;
+    ingredients: {};
+    recipe: Recipe;
+    strArea: string;
+    strCategory: string;
+    strMeal: string;
+    strMealThumb: string;
+    strTags: [string];
+    strYoutube: string;
+}
+
+const RECIPE_INITIAL_STATE: Recipe = {
+    recipeComplexity: null,
+    steps: [null],
+}
+
+const MEAL_INITIAL_STATE: Meal = {
+    idMeal: null,
+    ingredients: {},
+    recipe: RECIPE_INITIAL_STATE,
+    strArea: null,
+    strCategory: null,
+    strMeal: null,
+    strMealThumb: null,
+    strTags: [null],
+    strYoutube: null,
+}
+
+const MEALS_INITIAL_STATE: typeof MEAL_INITIAL_STATE[] = [];
+
 const initialState = {
-    meals: [],
+    meals: MEALS_INITIAL_STATE,
     meal: null,
     status: DataStatusEnum.IDLE
 }

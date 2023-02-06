@@ -2,8 +2,22 @@ import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
 import { getAllUsers, getUserById, updateUser, deleteUser } from './actions';
 
+interface User {
+    email: string;
+    firstName: string;
+    lastName: string;
+}
+
+const USER_INITIAL_STATE: User = {
+    email: null,
+    firstName: null,
+    lastName: null,
+}
+
+const USERS_INITIAL_STATE: typeof USER_INITIAL_STATE[] = [];
+
 const initialState = {
-    users: [],
+    users: USERS_INITIAL_STATE,
     user: null,
     status: DataStatusEnum.IDLE,
 }
