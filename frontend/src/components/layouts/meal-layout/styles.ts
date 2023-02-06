@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { Theme, css } from '@emotion/react';
 
 export const wrapper = () => css`
     width: 100%;
@@ -17,5 +17,30 @@ export const layout = () => css`
 
     & div:nth-of-type(3n + 2) {
         grid-row: span 2;
+    }
+`;
+
+export const alphabet = ({colors, radiuses}: Theme) => css`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: ${colors.light};
+    border-radius: ${radiuses.xlg};
+    margin-bottom: 20px;
+    padding: 20px;
+
+    & div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: ${colors.black};
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+
+        &[choosen-letter='true'] {
+            border: 5px solid ${colors.accent};
+        }
     }
 `;

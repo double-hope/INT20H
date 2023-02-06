@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ActionType, PathType } from './common';
 import { UserActionsDTO } from 'common/dto';
 
-const getAllUsers = createAsyncThunk(ActionType.GET_ALL, async (params: any, { extra }: any) => ({
+const getAllUsers = createAsyncThunk(ActionType.GET_ALL, async (params: any | null, { extra }: any) => ({
     users: extra.usersService.getAllUsers(PathType.GET_ALL, {
         ...params,
     })

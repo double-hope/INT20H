@@ -15,7 +15,7 @@ export const layout = () => css`
     gap: 20px;
     width: 100%;
 
-    & div:first-child {
+    & div:first-of-type {
         grid-column: span 3;
     }
 `;

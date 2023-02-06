@@ -52,8 +52,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getIngredientsByType.fulfilled, (state, { payload }) => {
-        const { ingredients } = payload;
-        state.ingredients = ingredients;
+        state.ingredients = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -62,8 +61,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getAllIngredientsTypes.fulfilled, (state, { payload }) => {
-        const { types } = payload;
-        state.types = types;
+        state.types = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
 });

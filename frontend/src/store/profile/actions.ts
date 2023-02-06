@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ActionType, PathType } from './common';
 import { AddProfileIngredientDTO, AddProfileMealDTO, DeleteProfileIngredientDTO, DeleteProfileMealDTO } from 'common/dto';
 
-const getSavedMeals = createAsyncThunk(ActionType.GET_MEALS, async (params: any, { extra }: any) => ({
+const getSavedMeals = createAsyncThunk(ActionType.GET_MEALS, async (params: any | null, { extra }: any) => ({
     usersMeals: extra.profileService.getSavedMeals(PathType.GET_MEALS, {
         ...params,
     })
@@ -20,7 +20,7 @@ const deleteMealFromProfile = createAsyncThunk(ActionType.DELETE_MEAL, async (pa
     })
 }));
 
-const getSavedIngredients = createAsyncThunk(ActionType.GET_INGREDIENTS, async (params: any, { extra }: any) => ({
+const getSavedIngredients = createAsyncThunk(ActionType.GET_INGREDIENTS, async (params: any | null, { extra }: any) => ({
     usersIngredients: extra.profileService.getSavedIngredients(PathType.GET_INGREDIENTS, {
         ...params,
     })

@@ -35,7 +35,7 @@ export const marker = ({colors, fontSizes}: Theme) => css`
     top: -10px;
     cursor: pointer;
 
-    & div:first-child {
+    & div:first-of-type {
         font-size: ${fontSizes.category};
         display: flex;
         justify-content: center;

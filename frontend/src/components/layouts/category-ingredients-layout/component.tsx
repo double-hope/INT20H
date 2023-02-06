@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { CategoryIngredientsLayoutProps } from './types';
 import * as styles from './styles';
 import { FoodItem } from 'components/food-item';
+import { ingredientImg } from 'assets/images/ingredients';
 
 const CategoryIngredientsLayout = ({ name, items, myIngredientsLayout }: CategoryIngredientsLayoutProps) => { 
-  
+
   const [myIngredients, setMyIngredients] = useState(myIngredientsLayout);
   
   return (
@@ -17,7 +18,7 @@ const CategoryIngredientsLayout = ({ name, items, myIngredientsLayout }: Categor
       </div>
       
       <div css={styles.flex}>
-        {items.map(item => <FoodItem img={item.img} name={item.name} added={false} myIngredients={myIngredients} />)}
+        {items && items.map(item => <FoodItem key={item.idIngredient} img={ingredientImg} name={item.strIngredient} added={false} myIngredients={myIngredients} />)}
       </div>
     </div>
   )
