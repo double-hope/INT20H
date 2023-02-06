@@ -25,3 +25,17 @@ export const links = () => css`
     flex-wrap: wrap;
     gap: 20px;
 `;
+
+export const logOut = ({ colors, radiuses, fontSizes }: Theme) => css`
+    background: ${colors.black};
+    color: ${colors.light};
+    padding: 20px 40px;
+    border-radius: ${radiuses.lg};
+    cursor: pointer;
+    font-family: 'Alef';
+    font-size: ${fontSizes.icons};
+
+    &:hover {
+      background: ${colors.accent};
+    }
+`;

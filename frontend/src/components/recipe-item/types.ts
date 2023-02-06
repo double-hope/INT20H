@@ -1,7 +1,4 @@
-interface ItemDTO {
-    img: string;
-    name: string;
-}
+import { ItemDTO } from 'common/dto';
 
 export type RecipeItemProps = {
     img: string;

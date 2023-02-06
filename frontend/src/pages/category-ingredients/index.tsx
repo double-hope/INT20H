@@ -16,7 +16,7 @@ const CategoryIngredients = () => {
         <Avatar avatar={null} />
       </Header>
       <BurgerMenu />
-      <CategoryIngredientsLayout name={'Ingredients'} items={categoryMock} />
+      <CategoryIngredientsLayout name={'Ingredients'} items={categoryMock} myIngredientsLayout={false} />
       <BackgroundImage type={BackgroundEnum.FILLED} />
       <Footer type={FooterEnum.LIGHT}/>
     </>

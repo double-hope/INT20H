@@ -3,9 +3,9 @@ import { CategoryIngredientsLayoutProps } from './types';
 import * as styles from './styles';
 import { FoodItem } from 'components/food-item';
 
-const CategoryIngredientsLayout = ({ name, items }: CategoryIngredientsLayoutProps) => { 
+const CategoryIngredientsLayout = ({ name, items, myIngredientsLayout }: CategoryIngredientsLayoutProps) => { 
   
-  const [myIngredients, setMyIngredients] = useState(false);
+  const [myIngredients, setMyIngredients] = useState(myIngredientsLayout);
   
   return (
     <div css={styles.wrapper}>
