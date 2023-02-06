@@ -24,16 +24,9 @@ class Ingredients {
         });
     }
 
-    getIngredientsByName(params) {
+    getIngredientByName(params) {
         const query = !!params.sort ? '?' + this._getQueryString(params) : '';
         return this._http.load(this._getUrl(query), {
-            method: HttpMethodEnum.GET,
-            contentType: 'application/json'
-        });
-    }
-
-    getAllIngredientsByType(path) {
-        return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
         });
@@ -42,6 +35,13 @@ class Ingredients {
     getIngredientsByType(params) {
         const query = !!params.sort ? '?' + this._getQueryString(params) : '';
         return this._http.load(this._getUrl(query), {
+            method: HttpMethodEnum.GET,
+            contentType: 'application/json'
+        });
+    }
+
+    getAllIngredientsTypes(path) {
+        return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
         });

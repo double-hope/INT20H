@@ -4,7 +4,7 @@ import { ingredients as ingredientsService } from 'services';
 import { meals as mealsService } from 'services';
 import { profile as profileService } from 'services';
 import { users as usersService } from 'services';
-import { auth } from './rootReducer';
+import { auth, meals, ingredients } from './rootReducer';
 
 const  middleware = getDefaultMiddleware({
     thunk: {
@@ -21,6 +21,8 @@ const  middleware = getDefaultMiddleware({
 const store = configureStore({
     reducer: combineReducers({
         auth,
+        meals,
+        ingredients,
     }),
     middleware,
     
