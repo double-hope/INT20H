@@ -2,8 +2,18 @@ import { DataStatusEnum } from 'common/enums';
 import { createReducer } from '@reduxjs/toolkit';
 import { signIn, signUp, refreshToken } from './actions';
 
+interface Token {
+    accessToken: string;
+    refreshToken: string;
+}
+
+const TOKEN_INITIAL_STATE: Token = {
+    accessToken: null,
+    refreshToken: null,
+}
+
 const initialState = {
-    tokens: [],
+    tokens: TOKEN_INITIAL_STATE,
     token: null,
     status: DataStatusEnum.IDLE,
 };
