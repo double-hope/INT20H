@@ -1,9 +1,11 @@
+import { UserSignInDTO } from 'common/dto';
 import { ButtonEnum, InputEnum } from 'common/enums';
 import { SignLayout } from 'components/layouts/sign-layout';
 import { Button } from 'components/primitives/button/component';
 import { Input } from 'components/primitives/input';
+import { useAppDispatch, useAppSelector } from 'hooks/store';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { signIn } from 'store/auth';
 
 type SignInProps = {
   toggleModals: (value: boolean) => void;
@@ -12,13 +14,20 @@ type SignInProps = {
 const SignIn = ({ toggleModals }: SignInProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useAppDispatch();
+  const { tokens } = useAppSelector(store => store.auth);
 
-  const navigate = useNavigate();
   const checkUser = (e) => {
     e.preventDefault();
-    console.log({email, password});
-    navigate('/home');
+
+    const user: UserSignInDTO = {
+      email, 
+      password
+    }
+    
+    dispatch(signIn(user));
   }
+  
 
   return (
     <>

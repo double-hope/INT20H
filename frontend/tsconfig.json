@@ -12,6 +12,7 @@
             "hooks/*": ["hooks/*"],
             "pages/*": ["pages/*"],
             "providers/*": ["providers/*"],
+            "services/*": ["services/*"],
             "store/*": ["store/*"],
             "utils/*": ["utils/*"]
         }

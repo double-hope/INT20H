@@ -8,3 +8,4 @@ export * from './recipe';
 export * from './footer';
 export * from './http';
 export * from './api';
+export * from './app';
