@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { FullRecipeLayoutProps } from './types';
 import * as styles from './styles';
 import { FlexLayoutEnum, FooterEnum, IconColor, IconName } from 'common/enums';
@@ -9,6 +9,7 @@ import { ProductFlagItem } from 'components/product-flag-item';
 
 const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
     const headerRef = useRef<HTMLDivElement>();
+    const [saved, setSaved] = useState(false);
 
     return (
         <div css={styles.layout}>
@@ -16,6 +17,12 @@ const FullRecipeLayout = ({ item }: FullRecipeLayoutProps) => {
                 <div ref={headerRef} css={[styles.defaultWrapper, styles.heading]}>
                     <p>{item.name}</p>
                     <p>Meals <Icon icon={IconName.ARROW_RIGHT} color={IconColor.BLACK}/> Sause</p>
+                    <div css={styles.marker} onClick={() => setSaved(!saved)}>
+                        <div saved-dish={`${saved}`}>
+                            {saved ? 'Unsave' : 'Save'}
+                        </div>
+                        <div saved-dish={`${saved}`} css={styles.triangle} />
+                    </div>
                     {/* HERE WILL BE CATEGORY */}
                 </div>
                 <div css={styles.item}>

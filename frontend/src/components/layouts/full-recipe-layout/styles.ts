@@ -19,6 +19,7 @@ export const layout = () => css`
 `;
 
 export const heading = ({ fontSizes, fontWeights }: Theme) => css`
+    position: relative;
     width: 110%;
     text-align: center;
     font-size: ${fontSizes.heading};
@@ -27,6 +28,40 @@ export const heading = ({ fontSizes, fontWeights }: Theme) => css`
         margin: 10px;
     }
 `;
+
+export const marker = ({colors, fontSizes}: Theme) => css`
+    position: absolute;
+    right: 30px;
+    top: -10px;
+    cursor: pointer;
+
+    & div:first-child {
+        font-size: ${fontSizes.category};
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        background-color: ${colors.black};
+        color: ${colors.light};
+        height: 100px;
+        
+        &[saved-dish='true'] {
+            background-color: ${colors.accent};
+        }
+    }
+`; 
+
+
+export const triangle = ({colors}: Theme) => css`
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 50px;
+    border-color: ${colors.black} transparent transparent transparent;
+    
+    &[saved-dish='true'] {
+        border-color: ${colors.accent} transparent transparent transparent;
+    }
+`; 
 
 export const item = ({ colors, radiuses, fontSizes }: Theme) => css`
     width: 100%;
