@@ -30,7 +30,7 @@ const CategoryIngredients = () => {
       setAllIngredients(ingredients);
     }
   }, [status]);
-  
+
   return (
     <>
       <Header>  

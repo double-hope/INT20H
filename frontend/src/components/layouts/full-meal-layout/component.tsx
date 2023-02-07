@@ -54,7 +54,7 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
     const onReady = (e) => {
         e.target.pauseVideo();
       }
-      
+    
     return (
         <div css={styles.layout}>
             <FlexLayout type={FlexLayoutEnum.DEFAULT}>

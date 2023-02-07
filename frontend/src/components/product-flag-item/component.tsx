@@ -16,8 +16,8 @@ const ProductFlagItem = ({ id, amount, name }: ProductFlagItemProps) => {
   }, [])
 
   const toggleAdded = () => {
-    if(!isAdded) dispatch(addIngredientToProfile({externalId: id}));
-    else dispatch(deleteIngredientFromProfile({externalIngredientId: id}));
+    if(!isAdded) dispatch(addIngredientToProfile({externalId: id[0]}));
+    else dispatch(deleteIngredientFromProfile({externalIngredientId: id[0]}));
     setIsAdded(!isAdded);
 }
 

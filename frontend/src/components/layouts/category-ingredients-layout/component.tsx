@@ -37,7 +37,7 @@ const CategoryIngredientsLayout = ({ name, items }: CategoryIngredientsLayoutPro
           ? <MyIngredientItem key={ingredient.idIngredient} number={1} id={ingredient.idIngredient} name={ingredient.strIngredient} />
           
           
-          : <>{status === DataStatusEnum.PENDING
+          : <>{status === DataStatusEnum.SUCCESS
             ? items.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)
             : <div> 
                 <ThreeDots 
