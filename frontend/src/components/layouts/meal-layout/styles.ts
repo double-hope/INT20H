@@ -61,4 +61,12 @@ export const searchLayout = ({colors, radiuses}: Theme) => css`
         border-radius: ${radiuses.xlg};
         cursor: pointer;
     }
+
+    @media all and (max-width: 900px) {     
+        grid-template-columns: 1fr;
+
+        & * {
+            margin: 10px;
+        }
+    }
 `;
