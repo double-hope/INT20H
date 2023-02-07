@@ -6,8 +6,8 @@ import { Profile } from './profile';
 import { Users } from './users';
 
 const http = new Http();
-const baseURL = 'http://hackathonint20h2023testtask-env.eba-qw8q6ixf.eu-north-1.elasticbeanstalk.com';
-
+// const baseURL = 'http://hackathonint20h2023testtask-env.eba-qw8q6ixf.eu-north-1.elasticbeanstalk.com';
+const baseURL = 'http://localhost:8080';
 
 const auth = new Auth({
     baseURL,
