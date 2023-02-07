@@ -103,6 +103,10 @@ export const item = ({ colors, radiuses, fontSizes }: Theme) => css`
         }
     }
 
+    @media all and (max-width: 800px) {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
 `;
 
 export const products = ({ fontSizes, radiuses, colors }: Theme) => css`
@@ -223,6 +227,14 @@ export const anchorLink = ({colors, fontSizes}: Theme) => css`
     &:hover {
         color: ${colors.accent};
         text-decoration: underline;
+    }
+`;
+
+export const linkContainer = ({colors}: Theme) => css`
+    background-color: ${colors.light};
+
+    & * {
+        background-color: ${colors.light};
     }
 
 `;

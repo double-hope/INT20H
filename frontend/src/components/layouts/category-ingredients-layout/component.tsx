@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CategoryIngredientsLayoutProps } from './types';
 import * as styles from './styles';
 import { MyIngredientItem } from 'components/my-ingredient-item';
@@ -7,18 +7,23 @@ import { ThreeDots  } from 'react-loader-spinner';
 import { DataStatusEnum } from 'common/enums';
 import { SearchInput } from 'components/primitives/input';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
-import { getIngredientByName } from 'store/ingredients';
+import { getIngredientByName, getIngredientsByPartName } from 'store/ingredients';
 
 const CategoryIngredientsLayout = ({ name, items }: CategoryIngredientsLayoutProps) => { 
   const [searchName, setSearchName] = useState('');
   
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { status, ingredient } = useAppSelector(state => state.ingredients);
+  const { status, searchedIngredients } = useAppSelector(state => state.ingredients);
 
   const searchByName = () => {
     dispatch(getIngredientByName({name: searchName}));
   }
+
+  useEffect(() => {
+    if(!!searchName) dispatch(getIngredientsByPartName({name: searchName}))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchName]);
 
   return (
     <div css={styles.wrapper}>
@@ -33,9 +38,8 @@ const CategoryIngredientsLayout = ({ name, items }: CategoryIngredientsLayoutPro
       </div>
       <div css={styles.flex}>
         {
-          !!ingredient && !!searchName.length
-          ? <MyIngredientItem key={ingredient.idIngredient} number={1} id={ingredient.idIngredient} name={ingredient.strIngredient} />
-          
+          !!searchedIngredients.length && !!searchName.length
+          ? searchedIngredients.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)
           
           : <>{status === DataStatusEnum.SUCCESS
             ? items.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)

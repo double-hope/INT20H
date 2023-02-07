@@ -9,6 +9,7 @@ const Navigation = ({ children }: NavigationProps) => {
   const logout = () => {
     sessionStorage.removeItem('accessToken');
     sessionStorage.removeItem('refreshToken');
+    sessionStorage.removeItem('userId');
     setAuth(false);
   }
 

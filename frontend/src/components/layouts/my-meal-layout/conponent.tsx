@@ -9,6 +9,9 @@ const MyMealLayout = ({meals}: MealLayoutProps) => {
     <div css={styles.wrapper}>
       <h1>My meals</h1>
 
+      <div css={styles.message}>
+        {!meals.length && <div> No saved meals </div> }
+      </div>
       <div css={styles.layout}>
         {
           meals.map(meal => <RecipeItem key={meal.strMeal} img={meal.strMealThumb} item={meal} />)

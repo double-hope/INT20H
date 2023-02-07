@@ -8,7 +8,6 @@ import { Users } from './users';
 const http = new Http();
 const baseURL = 'http://hackathonint20h2023testtask-env.eba-qw8q6ixf.eu-north-1.elasticbeanstalk.com';
 
-
 const auth = new Auth({
     baseURL,
     http

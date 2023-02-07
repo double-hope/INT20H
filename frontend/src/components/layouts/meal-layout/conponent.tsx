@@ -8,6 +8,7 @@ import { SearchInput } from 'components/primitives';
 
 const MealLayout = () => {
   const [choosen, setChoosen] = useState('A');
+  const [message, setMessage] = useState('');
   const [name, setName] = useState('');
   const dispatch = useAppDispatch();
   const { meals } = useAppSelector(state => state.meals);
@@ -23,7 +24,12 @@ const MealLayout = () => {
 
   const searchByMyIngredients = () => {
     dispatch(getAvailableMealsByFirstLetter({firstLetter: choosen}));
+    setMessage(`There is no meals on letter ${choosen} you can cook base on you ingredients`);
   }
+
+  useEffect(() => {
+    setMessage(`No recipes on letter ${choosen}`);
+  }, [choosen]);
 
   return (
     <div css={styles.wrapper}>
@@ -39,7 +45,7 @@ const MealLayout = () => {
       <div css={styles.layout}>
         { !!meals.length
           ? meals.map(meal => <RecipeItem key={meal.strMeal} img={meal.strMealThumb} item={meal} />)
-          : <div style={{width: '100%', textAlign: 'center', gridColumn: 'span 2'}}>No recipes on letter {choosen}</div>
+          : <div style={{width: '100%', textAlign: 'center', gridColumn: 'span 2'}}>{message}</div>
         }
       </div>
     </div>
