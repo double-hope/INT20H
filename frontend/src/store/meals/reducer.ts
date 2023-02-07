@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
-import { getMealByExternalId, getMealByFirstLetter, getAvailableMealsByFirstLetter } from './actions';
+import { getMealByExternalId, getMealByFirstLetter, getMealByName, getAvailableMealsByFirstLetter } from './actions';
 import { Ingredient } from 'common/dto';
 
 interface Recipe {
@@ -67,13 +67,23 @@ const reducer = createReducer(initialState, (builder) => {
         state.status = DataStatusEnum.SUCCESS;
     });
 
+    builder.addCase(getMealByName.pending, (state) => {
+        state.status = DataStatusEnum.PENDING;
+    });
+
+    builder.addCase(getMealByName.fulfilled, (state, { payload }) => {
+        const { meals } = payload;
+        state.meals = meals;
+        state.status = DataStatusEnum.SUCCESS;
+    });
+
     builder.addCase(getAvailableMealsByFirstLetter.pending, (state) => {
         state.status = DataStatusEnum.PENDING;
     });
      
     builder.addCase(getAvailableMealsByFirstLetter.fulfilled, (state, { payload }) => {
         const { meals } = payload;
-        state.meal = meals;
+        state.meals = meals;
         state.status = DataStatusEnum.SUCCESS;
     });
 

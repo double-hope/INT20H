@@ -48,3 +48,25 @@ export const alphabet = ({colors, radiuses}: Theme) => css`
         }
     }
 `;
+
+export const searchLayout = ({colors, radiuses}: Theme) => css`
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 20px 0;
+    text-align: center;
+
+    & div:last-child {
+        background-color: ${colors.black};
+        border: 10px solid ${colors.light};
+        border-radius: ${radiuses.xlg};
+        cursor: pointer;
+    }
+
+    @media all and (max-width: 900px) {     
+        grid-template-columns: 1fr;
+
+        & * {
+            margin: 10px;
+        }
+    }
+`;

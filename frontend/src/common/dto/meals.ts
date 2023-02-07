@@ -6,6 +6,11 @@ export interface MealsByLetterDTO {
     firstLetter: string;
 }
 
+export interface MealsByNameDTO {
+    name: string;
+}
+
+
 interface Recipe {
     recipeComplexity: string;
     steps: [string];
