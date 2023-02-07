@@ -18,7 +18,7 @@ const CategoryIngredientsLayout = ({ name, items, myIngredientsLayout }: Categor
       </div>
       
       <div css={styles.flex}>
-        {items && items.map(item => <FoodItem key={item.idIngredient} img={ingredientImg} name={item.strIngredient} added={false} myIngredients={myIngredients} />)}
+        {items && items.map(item => <FoodItem key={item.idIngredient} id={item.idIngredient} name={item.strIngredient} added={false} myIngredients={myIngredients} />)}
       </div>
     </div>
   )

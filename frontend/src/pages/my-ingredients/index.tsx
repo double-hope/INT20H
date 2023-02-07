@@ -6,10 +6,11 @@ import { IngredientsLayout } from 'components/layouts/ingredients-layout';
 import { Avatar } from 'components/primitives/avatar';
 import { Footer } from 'components/primitives/footer';
 import { Header } from 'components/primitives/header';
-import { IngredientsItem } from 'components/ingredients-item';
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import { getSavedIngredients } from 'store/profile';
+import { MyIngredientItem } from 'components/my-ingredient-item';
+import { MyIngredientsLayout } from 'components/layouts/my-ingredients-layout';
 
 const MyIngredients = () => {
   const [ ingredients, setIngredients ] = useState([]);
@@ -33,9 +34,15 @@ const MyIngredients = () => {
       <Header>
         <Avatar avatar={null} />
       </Header>
-      <IngredientsLayout name='My ingredients'>
-        {!!ingredients && ingredients.map(type => <IngredientsItem key={type.name} name={type.name} img={type.img} />)}
-      </IngredientsLayout>
+      <MyIngredientsLayout name='My ingredients'>
+        <MyIngredientItem number={1} id={"121"} name={'name'} />
+        <MyIngredientItem number={1} id={"121"} name={'name'} />
+        <MyIngredientItem number={1} id={"121"} name={'name'} />
+        <MyIngredientItem number={1} id={"121"} name={'name'} />
+        <MyIngredientItem number={1} id={"121"} name={'name'} />
+      
+        {!!usersIngredients && usersIngredients.map((ingredient, key) => <MyIngredientItem key={ingredient.idIngredient} number={key + 1} id={ingredient.idIngredient} name={ingredient.strIngredient} />)}
+      </MyIngredientsLayout>
       <Footer type={FooterEnum.LIGHT} />
       <BackgroundImage type={BackgroundEnum.FILLED} />
       <BurgerMenu />

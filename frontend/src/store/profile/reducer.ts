@@ -69,8 +69,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getSavedMeals.fulfilled, (state, { payload }) => {
-        const { usersMeals } = payload;
-        state.usersMeals = usersMeals;
+        state.usersMeals = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -79,8 +78,9 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(addMealToProfile.fulfilled, (state, { payload }) => {
-        const { usersMeal } = payload;
-        state.usersMeal = usersMeal;
+        console.log(payload);
+        
+        state.usersMeal = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -89,8 +89,6 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(deleteMealFromProfile.fulfilled, (state, { payload }) => {
-        const { usersMeals } = payload;
-        state.usersMeals = usersMeals;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -99,8 +97,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getSavedIngredients.fulfilled, (state, { payload }) => {
-        const { usersIngredients } = payload;
-        state.usersIngredients = usersIngredients;
+        state.usersIngredients = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -109,8 +106,9 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(addIngredientToProfile.fulfilled, (state, { payload }) => {
-        const { usersIngredient } = payload;
-        state.usersIngredient = usersIngredient;
+        console.log(payload);
+        
+        state.usersIngredient = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -119,8 +117,6 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(deleteIngredientFromProfile.fulfilled, (state, { payload }) => {
-        const { usersIngredients } = payload;
-        state.usersIngredients = usersIngredients;
         state.status = DataStatusEnum.SUCCESS;
     });
 });

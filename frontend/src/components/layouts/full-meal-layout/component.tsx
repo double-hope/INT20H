@@ -33,6 +33,7 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
     }
 
     useEffect(() => {
+        console.log(saved)
         if(saved) dispatch(addMealToProfile({externalId: meal.idMeal}));
         else dispatch(deleteMealFromProfile({externalMealId: meal.idMeal}));
     // eslint-disable-next-line react-hooks/exhaustive-deps

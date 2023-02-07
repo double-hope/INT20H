@@ -9,7 +9,7 @@ interface HttpProps {
 }
 
 class Http {
-    load(url, options: HttpProps){        
+    load(url, options: HttpProps){ 
         const { method = HttpMethodEnum.GET, payload = null, contentType } = options;
         const headers = this._getHeaders({
             contentType,

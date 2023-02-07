@@ -18,6 +18,8 @@ const MyMeals = () => {
     dispatch(getSavedMeals(null));
   }, []);
 
+  console.log(usersMeals)
+
   return (
     <>
       <Header>  

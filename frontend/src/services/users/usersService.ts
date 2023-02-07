@@ -38,7 +38,7 @@ class Users {
         const query = !!params.sort ? '?' + this._getQueryString(params) : '';
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.PUT,
-            payload,
+            payload: JSON.stringify(payload),
             contentType: 'application/json'
         })
     }

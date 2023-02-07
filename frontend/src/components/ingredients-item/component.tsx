@@ -7,7 +7,6 @@ import { getAllIngredients, getIngredientsByType } from 'store/ingredients';
 
 const IngredientsItem = ({ name, img }: IngredientsItemProps) => {
   const navigate = useNavigate();
-
   const dispatch = useAppDispatch();
 
   const click = () => {

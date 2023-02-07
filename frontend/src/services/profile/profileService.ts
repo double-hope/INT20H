@@ -26,9 +26,11 @@ class Profile {
     }
 
     addMealToProfile(path, payload) {
+        console.log(payload);
+        
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.POST,
-            payload,
+            payload: JSON.stringify(payload),
             contentType: 'application/json'
         });
     }
@@ -50,9 +52,11 @@ class Profile {
 
 
     addIngredientToProfile(path, payload) {
+        console.log(payload);
+        
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.POST,
-            payload,
+            payload: JSON.stringify(payload),
             contentType: 'application/json'
         });
     }
