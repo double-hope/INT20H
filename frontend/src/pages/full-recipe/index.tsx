@@ -1,9 +1,5 @@
 import { BackgroundEnum } from 'common/enums';
-import { BackgroundImage } from 'components/background';
-import { BurgerMenu } from 'components/burger-menu';
-import { FullMealLayout } from 'components/layouts/full-meal-layout';
-import { Avatar } from 'components/primitives/avatar';
-import { Header } from 'components/primitives/header';
+import { BackgroundImage, BurgerMenu, FullMealLayout, Header, Avatar } from 'components';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';

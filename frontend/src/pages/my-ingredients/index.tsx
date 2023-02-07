@@ -1,15 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { BackgroundEnum, DataStatusEnum, FooterEnum } from 'common/enums';
-import { BackgroundImage } from 'components/background';
-import { BurgerMenu } from 'components/burger-menu';
-import { Avatar } from 'components/primitives/avatar';
-import { Footer } from 'components/primitives/footer';
-import { Header } from 'components/primitives/header';
+import { Header, Footer, Avatar, BurgerMenu, BackgroundImage, MyIngredientItem, MyIngredientsLayout } from 'components';
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import { getSavedIngredients } from 'store/profile';
-import { MyIngredientItem } from 'components/my-ingredient-item';
-import { MyIngredientsLayout } from 'components/layouts/my-ingredients-layout';
 
 const MyIngredients = () => {
   const [ ingredients, setIngredients ] = useState([]);

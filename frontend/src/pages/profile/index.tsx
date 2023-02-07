@@ -1,13 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { BackgroundEnum, DataStatusEnum, FooterEnum } from 'common/enums'
-import { BackgroundImage } from 'components/background'
-import { BurgerMenu } from 'components/burger-menu'
-import { DefaultLayout } from 'components/layouts/default-layout';
-import { Navigation } from 'components/navigation';
-import { Avatar } from 'components/primitives/avatar';
-import { Footer } from 'components/primitives/footer';
-import { Header } from 'components/primitives/header';
-import { PageLink } from 'components/primitives/page-link';
+import { BurgerMenu, BackgroundImage, DefaultLayout, Navigation, Avatar, Footer, Header, PageLink } from 'components'
 import { UserContext } from 'context/user';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import React, { useContext, useEffect } from 'react';

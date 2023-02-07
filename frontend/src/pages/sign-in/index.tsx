@@ -1,8 +1,6 @@
 import { UserSignInDTO } from 'common/dto';
 import { ButtonEnum, DataStatusEnum, InputEnum } from 'common/enums';
-import { SignLayout } from 'components/layouts/sign-layout';
-import { Button } from 'components/primitives/button/component';
-import { Input } from 'components/primitives/input';
+import { Button, Input, SignLayout } from 'components';
 import { AuthContext } from 'context/auth';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import React, { useContext, useEffect, useState } from 'react';

@@ -1,12 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { BackgroundEnum, DataStatusEnum, FooterEnum } from 'common/enums';
-import { BackgroundImage } from 'components/background';
-import { BurgerMenu } from 'components/burger-menu';
-import { IngredientsLayout } from 'components/layouts/ingredients-layout';
-import { Avatar } from 'components/primitives/avatar';
-import { Footer } from 'components/primitives/footer';
-import { Header } from 'components/primitives/header';
-import { IngredientsItem } from 'components/ingredients-item';
+import { IngredientsItem, Header, Footer, Avatar, IngredientsLayout, BurgerMenu, BackgroundImage } from 'components';
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import { getAllIngredientsTypes } from 'store/ingredients';
