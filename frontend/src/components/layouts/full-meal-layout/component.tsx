@@ -12,12 +12,15 @@ import { arraysToObject } from 'helpers/arraysToObject';
 import { dtoToCategoryArray } from 'helpers/dtoToCategoryArray';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import { addMealToProfile, deleteMealFromProfile, getSavedMeals } from 'store/profile';
+import YouTube from 'react-youtube';
+import { parseYouTubeUrl } from 'helpers/parseYouTubeUrl';
 
 const KEY = 'strIngredient';
 const ID_KEY = 'idIngredient';
 
 const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
     const headerRef = useRef<HTMLDivElement>();
+    const [url, setUrl] = useState();
     const [saved, setSaved] = useState(false);
     const [amountProducts, setAmountProducts] = useState({});
     const [splitedIds, setSplitedIds] = useState([]);
@@ -29,10 +32,13 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
     }, []);
 
     useEffect(() => {
-        if(!!usersMeals) setSaved(!!usersMeals.find(item => item.idMeal === meal.idMeal))
+        if(!!usersMeals) setSaved(!!usersMeals.find(item => item.idMeal === meal.idMeal));
+        
+        
     }, [usersMeals])
 
     useEffect(() => {
+        setUrl(parseYouTubeUrl(meal.strYoutube));
         const splitedIngredients = dtoToCategoryArray(meal.ingredients, KEY);
         setSplitedIds(dtoToCategoryArray(meal.ingredients, ID_KEY));
         setAmountProducts(arraysToObject(splitedIngredients, Object.values(meal.ingredients)));
@@ -45,6 +51,10 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
         setSaved(!saved);
     }
 
+    const onReady = (e) => {
+        e.target.pauseVideo();
+      }
+      
     return (
         <div css={styles.layout}>
             <FlexLayout type={FlexLayoutEnum.DEFAULT}>
@@ -92,11 +102,7 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
                 
                 <div css={[styles.defaultWrapper, styles.video]}>
                     <h3>Video Tutorial</h3>
-                    <iframe title='unique' width="420" height="315" src={meal.strYoutube}>
-                    </iframe>
-                    <video controls preload="metadata">
-                        <source src={meal.strYoutube} type="video/mp4" />
-                    </video>
+                    {!!url && <YouTube videoId={url} onReady={onReady}/>}
                 </div>
                 <Footer type={FooterEnum.LIGHT} />
                 
