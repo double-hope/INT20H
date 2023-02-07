@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { CategoryIngredientsLayoutProps } from './types';
 import * as styles from './styles';
 import { MyIngredientItem } from 'components/my-ingredient-item';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ThreeDots  } from 'react-loader-spinner';
 import { DataStatusEnum } from 'common/enums';
 import { SearchInput } from 'components/primitives/input';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
-import { getIngredientByName, getIngredientsByPartName } from 'store/ingredients';
+import { getIngredientByName, getIngredientsByPartName, getIngredientsByTypePartName } from 'store/ingredients';
 
 const CategoryIngredientsLayout = ({ name, items }: CategoryIngredientsLayoutProps) => { 
   const [searchName, setSearchName] = useState('');
-  
+  const locale = useLocation();
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { status, searchedIngredients } = useAppSelector(state => state.ingredients);
@@ -21,7 +22,11 @@ const CategoryIngredientsLayout = ({ name, items }: CategoryIngredientsLayoutPro
   }
 
   useEffect(() => {
-    if(!!searchName) dispatch(getIngredientsByPartName({name: searchName}))
+    if(!!searchName) {
+      locale.pathname.split('/').pop() === 'all' 
+      ? dispatch(getIngredientsByPartName({name: searchName}))
+      : dispatch(getIngredientsByTypePartName({type: locale.pathname.split('/').pop(), name: searchName}));
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchName]);
 
