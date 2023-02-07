@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from 'react'
 import { FullMealLayoutProps } from './types';
 import * as styles from './styles';
@@ -9,17 +10,27 @@ import { ProductFlagItem } from 'components/product-flag-item';
 import { Link } from 'react-router-dom';
 import { arraysToObject } from 'helpers/arraysToObject';
 import { dtoToCategoryArray } from 'helpers/dtoToCategoryArray';
-import { useAppDispatch } from 'hooks/store';
-import { addMealToProfile, deleteMealFromProfile } from 'store/profile';
+import { useAppDispatch, useAppSelector } from 'hooks/store';
+import { addMealToProfile, deleteMealFromProfile, getSavedMeals } from 'store/profile';
 
 const KEY = 'strIngredient';
 const ID_KEY = 'idIngredient';
+
 const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
     const headerRef = useRef<HTMLDivElement>();
     const [saved, setSaved] = useState(false);
     const [amountProducts, setAmountProducts] = useState({});
     const [splitedIds, setSplitedIds] = useState([]);
     const dispatch = useAppDispatch();
+    const { usersMeals } = useAppSelector(state => state.profile);
+
+    useEffect(() => {
+        dispatch(getSavedMeals(null));
+    }, []);
+
+    useEffect(() => {
+        if(!!usersMeals) setSaved(!!usersMeals.find(item => item.idMeal === meal.idMeal))
+    }, [usersMeals])
 
     useEffect(() => {
         const splitedIngredients = dtoToCategoryArray(meal.ingredients, KEY);
@@ -33,10 +44,8 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
     }
 
     useEffect(() => {
-        console.log(saved)
         if(saved) dispatch(addMealToProfile({externalId: meal.idMeal}));
         else dispatch(deleteMealFromProfile({externalMealId: meal.idMeal}));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [saved]);
 
     return (

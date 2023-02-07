@@ -12,6 +12,7 @@ export const wrapper = ({ colors }: Theme) => css`
     }
 
     & li {
+        cursor: pointer;
         transition: all .2s;
         background-color: ${colors.text};
         color: ${colors.light};

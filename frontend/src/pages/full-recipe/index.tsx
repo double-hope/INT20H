@@ -17,7 +17,8 @@ const FullRecipe = () => {
     dispatch(getMealByExternalId({mealExternalId: id}))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-  
+
+
   return (
     <>
       {!!meal && <FullMealLayout meal={meal}/>}
