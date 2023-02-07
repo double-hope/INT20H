@@ -7,4 +7,4 @@ export * from './profile';
 export * from './category-ingredients';
 export * from './my-meals';
 export * from './my-ingredients';
-export * from './grosseries';
+export * from './groceries';

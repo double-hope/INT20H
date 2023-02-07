@@ -37,7 +37,7 @@ const Profile = () => {
         <Navigation>
           <PageLink pageUrl='meals' categoryName='Meals'/>
           <PageLink pageUrl='ingredients' categoryName='Ingredients'/>
-          <PageLink pageUrl='grosseries' categoryName='Grosseries'/>
+          <PageLink pageUrl='groceries' categoryName='Groceries'/>
           <PageLink pageUrl='my-meals' categoryName='My meals'/>
           <PageLink pageUrl='my-ingredients' categoryName='My ingredients'/>
         </Navigation>

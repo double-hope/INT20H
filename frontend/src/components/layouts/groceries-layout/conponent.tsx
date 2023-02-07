@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import * as styles from './styles';
-import { GrosseriesLayoutProps } from './types';
+import { GroceriesLayoutProps } from './types';
 import { SearchInput } from 'components/primitives/input';
 import { Button } from 'components/primitives/button/component';
 import { ButtonEnum } from 'common/enums';
 
-const GrosseriesLayout = ({ children }: GrosseriesLayoutProps) => {
+const GroceriesLayout = ({ children }: GroceriesLayoutProps) => {
   const [value, setValue] = useState('');
 
   const callback = () => {
@@ -15,7 +15,7 @@ const GrosseriesLayout = ({ children }: GrosseriesLayoutProps) => {
   return (
     <div css={styles.wrapper}>
       <div css={styles.heading}>
-        <h1>Grosseries</h1>
+        <h1>Groceries</h1>
       </div>
       <div css={styles.layout}>
         <div css={styles.searchMenu}>
@@ -31,4 +31,4 @@ const GrosseriesLayout = ({ children }: GrosseriesLayoutProps) => {
   )
 }
 
-export { GrosseriesLayout };
+export { GroceriesLayout };
