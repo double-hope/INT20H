@@ -19,8 +19,6 @@ const ProductFlagItem = ({ id, amount, name }: ProductFlagItemProps) => {
     else dispatch(deleteIngredientFromProfile({externalIngredientId: id}));
   }, [isAdded]);
 
-  console.log(usersIngredients);
-
   return (
     <div css={styles.wrapper}>
         <div css={styles.amount}>{amount}</div>

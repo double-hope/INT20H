@@ -4,7 +4,7 @@ import { RecipeItem } from 'components/recipe-item';
 import { MealLayoutProps } from './types';
 
 const MyMealLayout = ({meals}: MealLayoutProps) => {
-  console.log(meals);
+  
   return (
     <div css={styles.wrapper}>
       <h1>Meals</h1>

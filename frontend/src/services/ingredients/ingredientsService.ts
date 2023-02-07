@@ -18,7 +18,7 @@ class Ingredients {
         this._basePath = ApiPath.INGREDIENTS;
     }
 
-    getAllIngredients(path) {        
+    getAllIngredients(path) {
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
