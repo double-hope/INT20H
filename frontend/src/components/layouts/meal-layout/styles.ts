@@ -1,7 +1,7 @@
 import { Theme, css } from '@emotion/react';
 
 export const wrapper = () => css`
-    width: 100%;
+    width: 80%;
     max-width: 1024px;
     margin: 0 auto;
     color: white;
@@ -17,6 +17,10 @@ export const layout = () => css`
 
     & div:nth-of-type(3n + 2) {
         grid-row: span 2;
+    }
+
+    @media all and (max-width: 800px) {
+        grid-template-columns: 1fr ;
     }
 `;
 
