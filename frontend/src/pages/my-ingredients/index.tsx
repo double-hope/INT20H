@@ -27,7 +27,7 @@ const MyIngredients = () => {
       setIngredients(usersIngredients);
     }
   }, [status]);
-  console.log(usersIngredients)
+  
   return (
     <>
       <Header>
