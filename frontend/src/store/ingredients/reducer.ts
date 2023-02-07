@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
-import { getAllIngredients, getIngredientByName, getIngredientsByPartName, getIngredientsByType, getAllIngredientsTypes } from './actions';
+import { getAllIngredients, getIngredientByName, getIngredientsByPartName, getIngredientsByTypePartName, getIngredientsByType, getAllIngredientsTypes } from './actions';
 
 interface Ingredient {
     idIngredient: string;
@@ -51,6 +51,17 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getIngredientsByPartName.fulfilled, (state, { payload }) => {
+        state.searchedIngredients = payload;
+        state.status = DataStatusEnum.SUCCESS;
+    });
+
+    builder.addCase(getIngredientsByTypePartName.pending, (state) => {
+        state.status = DataStatusEnum.PENDING;
+    });
+    
+    builder.addCase(getIngredientsByTypePartName.fulfilled, (state, { payload }) => {
+        console.log(payload);
+        
         state.searchedIngredients = payload;
         state.status = DataStatusEnum.SUCCESS;
     });

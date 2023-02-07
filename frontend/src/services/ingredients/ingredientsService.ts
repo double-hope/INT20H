@@ -41,6 +41,14 @@ class Ingredients {
         });
     }
 
+    getIngredientsByTypePartName(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => key + '/' + params.params[key as keyof typeof params.params] + '/')}`
+        return this._http.load(this._getUrl(query.replace(',','')), {
+            method: HttpMethodEnum.GET,
+            contentType: 'application/json'
+        });
+    }
+
     getIngredientsByType(params: RequestDTO) {
         const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
