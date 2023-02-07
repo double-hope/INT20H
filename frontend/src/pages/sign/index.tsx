@@ -1,11 +1,6 @@
 import { BackgroundEnum, ButtonEnum, FlexLayoutEnum, FooterEnum } from 'common/enums';
-import { BackgroundImage } from 'components/background';
-import { FlexLayout } from 'components/layouts/flex-layout';
-import { Button } from 'components/primitives/button/component';
-import { Footer } from 'components/primitives/footer';
+import { Button, Footer, ButtonLayout, Modal, FlexLayout, BackgroundImage } from 'components';
 import React, { useState } from 'react';
-import { ButtonLayout } from 'components/layouts/button-layout';
-import { Modal } from 'components/primitives/modal';
 import { SignIn } from 'pages/sign-in';
 import { SignUp } from 'pages/sign-up';
 
