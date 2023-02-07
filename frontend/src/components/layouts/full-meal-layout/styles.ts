@@ -194,9 +194,13 @@ export const video = ({ fontSizes }: Theme) => css`
         font-size: ${fontSizes.category};
     }
 
-    & video {
+    & div {
         margin: 10px;
         width: 90%;
+
+        & * {
+            width: 100%;
+        }
     }
 `;
 

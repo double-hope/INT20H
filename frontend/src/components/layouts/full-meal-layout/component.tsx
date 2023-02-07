@@ -102,7 +102,9 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
                 
                 <div css={[styles.defaultWrapper, styles.video]}>
                     <h3>Video Tutorial</h3>
-                    {!!url && <YouTube videoId={url} onReady={onReady}/>}
+                    <div>
+                        {!!url && <YouTube videoId={url} onReady={onReady}/>}
+                    </div>
                 </div>
                 <Footer type={FooterEnum.LIGHT} />
                 

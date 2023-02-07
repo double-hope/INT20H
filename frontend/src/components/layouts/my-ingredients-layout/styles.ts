@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { Theme } from '@emotion/react';
 
 export const wrapper = ({colors}: Theme) => css`
-    width: 100%;
+    width: 80%;
     max-width: 1024px;
     margin: 0 auto;
     color: ${colors.black};
@@ -26,7 +26,7 @@ export const heading = ({ colors, fontSizes, fontWeights, radiuses }: Theme) => 
     width: 100%;
     background-color: ${colors.light};
     text-align: center;
-    font-size: ${fontSizes.category};
+    font-size: ${fontSizes.icons};
     font-weight: ${fontWeights.h1};
     padding: 20px 0 30px;
     border-radius: ${radiuses.xlg};
@@ -42,7 +42,7 @@ export const button = ({ colors, radiuses, fontSizes }: Theme) => css`
     background-color: ${colors.black};
     border: 10px solid rgba(255, 255, 255, 0.8);
     color: ${colors.light};
-    font-size: ${fontSizes.icons};
+    font-size: ${fontSizes.body};
     padding: 20px;
     border-radius: ${radiuses.xlg};
 
@@ -50,4 +50,12 @@ export const button = ({ colors, radiuses, fontSizes }: Theme) => css`
         background-color: ${colors.accent};
         cursor: pointer;
     }
+    
+    @media all and (max-width: 800px) {
+        position: relative;
+        width: 50%;
+        margin: 0 auto;
+        top: 20px;
+        left: 0;
+    } 
 `;
