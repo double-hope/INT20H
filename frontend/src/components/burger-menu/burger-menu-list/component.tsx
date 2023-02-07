@@ -21,7 +21,7 @@ const BurgerMenuList = () => {
             <li onClick={() => navigate('/my-meals')}>My meals</li>
             <li onClick={() => navigate('/ingredients')}>Ingredients</li>
             <li onClick={() => navigate('/my-ingredients')}>My ingredients</li>
-            <li onClick={() => navigate('/')}>Grosseries</li>
+            <li onClick={() => navigate('/grosseries')}>Grosseries</li>
             <li onClick={logout}>Log out</li>
         </ul>
     </div>

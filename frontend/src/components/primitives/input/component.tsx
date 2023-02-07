@@ -13,10 +13,10 @@ const Input = ({ placeholder, value, setValue, type }: InputProps) => {
   )
 }
 
-const SearchInput = ({ placeholder, value, setValue, type, callback }: SearchInputProps) => {
+const SearchInput = ({ placeholder, value, setValue, callback }: SearchInputProps) => {
   return (
     <div css={styles.wrapper}>
-        <input type={type} css={styles.inputSearch} value={value} onChange={(e) => setValue(e.target.value)} required />
+        <input type='text' css={styles.inputSearch} value={value} onChange={(e) => setValue(e.target.value)} required />
         <label css={styles.label}>{placeholder}</label>
         <IconButton icon={IconName.SEARCH} color={IconColor.BLACK} callback={callback} />
     </div>

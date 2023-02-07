@@ -6,6 +6,7 @@ import { AuthContext } from 'context/auth';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import React, { useContext, useEffect, useState } from 'react';
 import { signUp } from 'store/auth';
+import jwtDecode from 'jwt-decode';
 
 type SignUpProps = {
   toggleModals: (value: boolean) => void;
@@ -36,6 +37,7 @@ const SignUp = ({ toggleModals }: SignUpProps) => {
 
   useEffect(() => {
     if(status === DataStatusEnum.SUCCESS) {
+      sessionStorage.setItem('userId', jwtDecode(tokens.accessToken)['userId']);
       sessionStorage.setItem('accessToken', tokens.accessToken);
       sessionStorage.setItem('refreshToken', tokens.refreshToken);
       setAuth(true);

@@ -13,5 +13,4 @@ export type SearchInputProps = {
     value: string;
     setValue: (value: string) => void;
     callback: () => void;
-    type: InputEnum;
 }
