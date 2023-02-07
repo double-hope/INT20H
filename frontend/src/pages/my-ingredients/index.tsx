@@ -2,7 +2,6 @@
 import { BackgroundEnum, DataStatusEnum, FooterEnum } from 'common/enums';
 import { BackgroundImage } from 'components/background';
 import { BurgerMenu } from 'components/burger-menu';
-import { IngredientsLayout } from 'components/layouts/ingredients-layout';
 import { Avatar } from 'components/primitives/avatar';
 import { Footer } from 'components/primitives/footer';
 import { Header } from 'components/primitives/header';
@@ -28,19 +27,13 @@ const MyIngredients = () => {
       setIngredients(usersIngredients);
     }
   }, [status]);
-  
+  console.log(usersIngredients)
   return (
     <>
       <Header>
         <Avatar avatar={null} />
       </Header>
-      <MyIngredientsLayout name='My ingredients'>
-        <MyIngredientItem number={1} id={"121"} name={'name'} />
-        <MyIngredientItem number={1} id={"121"} name={'name'} />
-        <MyIngredientItem number={1} id={"121"} name={'name'} />
-        <MyIngredientItem number={1} id={"121"} name={'name'} />
-        <MyIngredientItem number={1} id={"121"} name={'name'} />
-      
+      <MyIngredientsLayout name='My ingredients'>      
         {!!usersIngredients && usersIngredients.map((ingredient, key) => <MyIngredientItem key={ingredient.idIngredient} number={key + 1} id={ingredient.idIngredient} name={ingredient.strIngredient} />)}
       </MyIngredientsLayout>
       <Footer type={FooterEnum.LIGHT} />
