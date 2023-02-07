@@ -73,7 +73,7 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
                     <div>
                         <img src={meal.strMealThumb} alt="" />
                     </div>
-                    <div>
+                    <div css={styles.linkContainer}>
                         <h3>Content</h3>
                         <Anchor> 
                             <ul>
