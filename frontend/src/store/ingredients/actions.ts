@@ -14,6 +14,12 @@ const getIngredientByName = createAsyncThunk(ActionType.GET_BY_NAME, async (para
     }}).then(res => res)
 ));
 
+const getIngredientsByPartName = createAsyncThunk(ActionType.GET_BY_PART_NAME, async (params: IngredientsByNameDTO, { extra }: any) => (
+    extra.ingredientsService.getIngredientsByPartName({ path: PathType.GET_BY_PART_NAME, params, extra: {
+        ...params,
+    }}).then(res => res)
+));
+
 const getIngredientsByType = createAsyncThunk(ActionType.GET_BY_TYPE, async (params: IngredientsByTypeDTO, { extra }: any) => (
     extra.ingredientsService.getIngredientsByType({path: PathType.GET_BY_TYPE, params, extra: {
         ...params,
@@ -26,4 +32,4 @@ const getAllIngredientsTypes = createAsyncThunk(ActionType.GET_TYPES, async (par
     }).then(res => res)
 ));
 
-export { getAllIngredients, getIngredientByName, getIngredientsByType, getAllIngredientsTypes };
+export { getAllIngredients, getIngredientByName, getIngredientsByPartName, getIngredientsByType, getAllIngredientsTypes };
