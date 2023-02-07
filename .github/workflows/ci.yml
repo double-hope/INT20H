@@ -1,5 +1,6 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Build & Deploy
+run-name: Building the application and deploying it to AWS S3
+
 on:
   push:
     branches: [ main ]
@@ -14,6 +15,7 @@ jobs:
         node-version: [ 16.x ]
     steps:
       - uses: actions/checkout@v3
+
       - name: Install NodeJS ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -25,5 +27,15 @@ jobs:
       - name: Check code quality
         run: npm run lint:frontend
 
-      - name: Build
+      - name: Build the application
         run: npm run build:frontend
+
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1
+      
+      - name: Deploy to AWS S3
+        run: aws s3 sync ./frontend/build/. s3://www.the-sunday-bite.sevenorganization.org
