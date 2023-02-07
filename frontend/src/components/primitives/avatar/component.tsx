@@ -13,7 +13,7 @@ const Avatar = ({ avatar }: AvatartProps) => {
   return (
     <div css={styles.wrapper} onClick={() => navigate('/')}>
       {
-        !!user
+        !!user.firstName
         ? <div css={styles.name}>{`${user.firstName} ${user.lastName}`}</div>
         : <>
           { avatar 

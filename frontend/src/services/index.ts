@@ -6,29 +6,31 @@ import { Profile } from './profile';
 import { Users } from './users';
 
 const http = new Http();
+const baseURL = 'http://localhost:8080';
+
 
 const auth = new Auth({
-    baseURL: 'http://localhost:8080',
+    baseURL,
     http
 });
 
 const users = new Users({
-    baseURL: 'http://localhost:8080',
+    baseURL,
     http
 });
 
 const ingredients = new Ingredients({
-    baseURL: 'http://localhost:8080',
+    baseURL,
     http
 });
 
 const meals = new Meals({
-    baseURL: 'http://localhost:8080',
+    baseURL,
     http
 });
 
 const profile = new Profile({
-    baseURL: 'http://localhost:8080',
+    baseURL,
     http
 });
 

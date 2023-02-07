@@ -6,6 +6,7 @@ export const wrapper = ({ colors, radiuses }: Theme) => css`
     border: 10px solid ${colors.light};
     border-radius: ${radiuses.xlg};
     position: relative;
+    cursor: pointer;
 
     & img {
         width: 100%;

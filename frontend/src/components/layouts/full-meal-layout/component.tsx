@@ -14,6 +14,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/store';
 import { addMealToProfile, deleteMealFromProfile, getSavedMeals } from 'store/profile';
 import YouTube from 'react-youtube';
 import { parseYouTubeUrl } from 'helpers/parseYouTubeUrl';
+import { Anchor } from 'antd';
 
 const KEY = 'strIngredient';
 const ID_KEY = 'idIngredient';
@@ -74,33 +75,35 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
                     </div>
                     <div>
                         <h3>Content</h3>
-                        <ul>
-                            <li>Products</li> 
-                            <li>Recipe</li>
-                            <li>Video tutorial</li>
-                        </ul>
+                        <Anchor> 
+                            <ul>
+                                <li><Anchor.Link css={styles.anchorLink} href='#products' title='Products' /></li> 
+                                <li><Anchor.Link css={styles.anchorLink} href='#recipe' title='Recipe' /></li> 
+                                <li><Anchor.Link css={styles.anchorLink} href='#video' title='Video tutorial' /></li> 
+                            </ul>
+                        </Anchor>
+                        
                     </div>
                     <div>
                         <h3>Level</h3>
                         <p>{meal.recipe.recipeComplexity}</p>
                     </div>
                 </div>
-                <div css={[styles.defaultWrapper, styles.products]}>
+                <div id='products' css={[styles.defaultWrapper, styles.products]}>
                     <h3>Products</h3>
                     <div css={styles.productsAmount}>
                         {Object.entries(amountProducts).map((product, key) => <ProductFlagItem id={splitedIds[key]} key={product[0].toString()} amount={product[1].toString()} name={product[0].toString()}/>)}
                     </div>
-
                 </div>
                 
-                <div css={[styles.defaultWrapper, styles.recipe]}>
+                <div id='recipe' css={[styles.defaultWrapper, styles.recipe]}>
                     <h3>Recipe</h3>
                     <ol>
                         {meal.recipe.steps.map(step => <li key={step}><p>{step}</p></li>)}
                     </ol>
                 </div>
                 
-                <div css={[styles.defaultWrapper, styles.video]}>
+                <div id='video' css={[styles.defaultWrapper, styles.video]}>
                     <h3>Video Tutorial</h3>
                     <div>
                         {!!url && <YouTube videoId={url} onReady={onReady}/>}

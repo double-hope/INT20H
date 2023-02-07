@@ -78,13 +78,13 @@ export const item = ({ colors, radiuses, fontSizes }: Theme) => css`
         border-radius: ${radiuses.xlg};
         border: 10px solid rgba(0, 0, 0, 0.2);
         padding: 40px;
-        font-size: ${fontSizes.icons};
+        font-size: ${fontSizes.category};
 
         & ul {
             padding: 0;
             transform: translateX(-20px);
         }
-        
+
         & h3 {
             font-size: ${fontSizes.category};
         }
@@ -207,6 +207,18 @@ export const video = ({ fontSizes }: Theme) => css`
 export const link = ({colors}: Theme) => css`
     color: ${colors.black};
     text-decoration: none;
+
+    &:hover {
+        color: ${colors.accent};
+        text-decoration: underline;
+    }
+
+`;
+
+export const anchorLink = ({colors, fontSizes}: Theme) => css`
+    color: ${colors.black};
+    text-decoration: none;
+    font-size: ${fontSizes.icons};
 
     &:hover {
         color: ${colors.accent};
