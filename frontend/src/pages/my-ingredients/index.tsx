@@ -34,7 +34,11 @@ const MyIngredients = () => {
         <Avatar avatar={null} />
       </Header>
       <MyIngredientsLayout name='My ingredients'>      
-        {!!usersIngredients && usersIngredients.map((ingredient, key) => <MyIngredientItem key={ingredient.idIngredient} number={key + 1} id={ingredient.idIngredient} name={ingredient.strIngredient} />)}
+        {
+          !!usersIngredients.length
+          ? usersIngredients.map((ingredient, key) => <MyIngredientItem key={ingredient.idIngredient} number={key + 1} id={ingredient.idIngredient} name={ingredient.strIngredient} />)
+          : <div style={{textAlign: 'center', width: '100%', gridColumn: 'span 2'}}> No saved ingredients </div>
+        }
       </MyIngredientsLayout>
       <Footer type={FooterEnum.LIGHT} />
       <BackgroundImage type={BackgroundEnum.FILLED} />

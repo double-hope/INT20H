@@ -3,6 +3,7 @@ import { CategoryIngredientsLayoutProps } from './types';
 import * as styles from './styles';
 import { MyIngredientItem } from 'components/my-ingredient-item';
 import { useNavigate } from 'react-router-dom';
+import { ThreeDots  } from 'react-loader-spinner';
 
 const CategoryIngredientsLayout = ({ name, items, myIngredientsLayout }: CategoryIngredientsLayoutProps) => { 
   
@@ -18,7 +19,19 @@ const CategoryIngredientsLayout = ({ name, items, myIngredientsLayout }: Categor
       </div>
       
       <div css={styles.flex}>
-        {items && items.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)}
+        {!!items.length
+          ? items.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)
+          : <div> 
+              <ThreeDots 
+                height={80}
+                width={80}
+                radius={9}
+                color="#000000"
+                ariaLabel="three-dots-loading"
+                visible={true}
+              />  
+            </div>
+        }
       </div>
     </div>
   )
