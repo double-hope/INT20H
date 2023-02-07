@@ -14,10 +14,13 @@ export const layout = ({colors, radiuses}: Theme) => css`
     border-radius: ${radiuses.xlg};
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 50px;
+    grid-template-columns: 1fr 2fr;
     gap: 10px;
     width: 100%;
+
+    @media all and (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 
@@ -34,28 +37,14 @@ export const heading = ({ colors, fontSizes, fontWeights, radiuses }: Theme) => 
     margin-bottom: 50px;
 `;
 
-export const button = ({ colors, radiuses, fontSizes }: Theme) => css`
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: ${colors.black};
-    border: 10px solid rgba(255, 255, 255, 0.8);
-    color: ${colors.light};
-    font-size: ${fontSizes.body};
-    padding: 20px;
-    border-radius: ${radiuses.xlg};
+export const map = () => css`
+    background-color: rgba(0, 0, 0, 0.3);
+`;
 
-    &:hover {
-        background-color: ${colors.accent};
-        cursor: pointer;
-    }
-    
-    @media all and (max-width: 800px) {
-        position: relative;
-        width: 50%;
-        margin: 0 auto;
-        top: 20px;
-        left: 0;
-    } 
+export const searchMenu = () => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 `;

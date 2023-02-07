@@ -3,5 +3,5 @@ export enum InputEnum {
     PHONE = 'phone',
     EMAIL = 'email',
     PASSWORD = 'password',
-    SEARCH = 'search'
+    SEARCH = 'text'
 }

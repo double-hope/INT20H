@@ -78,8 +78,6 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(addMealToProfile.fulfilled, (state, { payload }) => {
-        console.log(payload);
-        
         state.usersMeal = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
@@ -106,8 +104,6 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(addIngredientToProfile.fulfilled, (state, { payload }) => {
-        console.log(payload);
-        
         state.usersIngredient = payload;
         state.status = DataStatusEnum.SUCCESS;
     });

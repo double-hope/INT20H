@@ -17,10 +17,11 @@ const FoodItem = ({ id, name }: FoodItemProps) => {
     if(!usersIngredients) dispatch(getSavedIngredients(null));
   }, [])
 
-  useEffect(() => {
-    if(isAdded) dispatch(addIngredientToProfile({externalId: id}));
+  const toggleAdded = () => {
+    if(!isAdded) dispatch(addIngredientToProfile({externalId: id}));
     else dispatch(deleteIngredientFromProfile({externalIngredientId: id}));
-  }, [isAdded]);
+    setIsAdded(!isAdded);
+}
 
   useEffect(() => {
     if(status === DataStatusEnum.SUCCESS) {
@@ -32,7 +33,7 @@ const FoodItem = ({ id, name }: FoodItemProps) => {
     <div css={styles.wrapper}>
         <div css={styles.image}>
             <img src={ingredientImg} alt="" />
-            {!!usersIngredients && <div added-item={`${isAdded}`} onClick={() => setIsAdded(!isAdded)}> {isAdded ? '-' : '+'} </div>}
+            {!!usersIngredients && <div added-item={`${isAdded}`} onClick={toggleAdded}> {isAdded ? '-' : '+'} </div>}
         </div>
         <div css={styles.name}>{name}</div>
     </div>

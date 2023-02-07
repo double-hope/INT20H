@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { Theme } from '@emotion/react';
 
 export const defaultWrapper = ({ colors, radiuses }: Theme) => css`
-    width: 100%;
+    width: 80%;
     background-color: ${colors.light};
     padding: 30px;
     border-radius: ${radiuses.xlg};
@@ -20,7 +20,7 @@ export const layout = () => css`
 
 export const heading = ({ fontSizes, fontWeights }: Theme) => css`
     position: relative;
-    width: 110%;
+    width: 100%;
     text-align: center;
     font-size: ${fontSizes.heading};
     font-weight: ${fontWeights.h1};
@@ -64,7 +64,7 @@ export const triangle = ({colors}: Theme) => css`
 `; 
 
 export const item = ({ colors, radiuses, fontSizes }: Theme) => css`
-    width: 100%;
+    width: 80%;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 10px;
@@ -125,6 +125,10 @@ export const productsAmount = ({ fontSizes, radiuses, colors }: Theme) => css`
 
     & h3 {
         font-size: ${fontSizes.category};
+    }
+    @media all and (max-width: 900px) {
+        
+        grid-template-columns: 1fr;
     }
 `;
 
@@ -190,9 +194,13 @@ export const video = ({ fontSizes }: Theme) => css`
         font-size: ${fontSizes.category};
     }
 
-    & video {
+    & div {
         margin: 10px;
         width: 90%;
+
+        & * {
+            width: 100%;
+        }
     }
 `;
 

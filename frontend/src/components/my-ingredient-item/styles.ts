@@ -5,7 +5,7 @@ export const wrapper = ({fontSizes}: Theme) => css`
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 300px;
     gap: 10px;
     margin: 0 20px;
 

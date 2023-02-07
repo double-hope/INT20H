@@ -15,9 +15,9 @@ const addMealToProfile = createAsyncThunk(ActionType.ADD_MEAL, async (params: Ad
 ));
 
 const deleteMealFromProfile = createAsyncThunk(ActionType.DELETE_MEAL, async (params: DeleteProfileMealDTO, { extra }: any) => (
-    extra.profileService.deleteMealFromProfile(PathType.DELETE_MEAL, params.externalMealId, {
+    extra.profileService.deleteMealFromProfile({path: PathType.DELETE_MEAL, params, extra: {
         ...params,
-    }).then(res => res)
+    }})
 ));
 
 const getSavedIngredients = createAsyncThunk(ActionType.GET_INGREDIENTS, async (params: any | null, { extra }: any) => (
@@ -33,9 +33,9 @@ const addIngredientToProfile = createAsyncThunk(ActionType.ADD_INGREDIENT, async
 ));
 
 const deleteIngredientFromProfile = createAsyncThunk(ActionType.DELETE_INGREDIENT, async (params: DeleteProfileIngredientDTO, { extra }: any) => (
-    extra.profileService.deleteIngredientFromProfile(PathType.DELETE_INGREDIENT, params.externalIngredientId, {
+    extra.profileService.deleteIngredientFromProfile({path: PathType.DELETE_INGREDIENT, params, extra: {
         ...params,
-    }).then(res => res)
+    }})
 ));
 
 

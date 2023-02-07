@@ -29,8 +29,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getAllUsers.fulfilled, (state, { payload }) => {
-        const { users } = payload;
-        state.users = users;
+        state.users = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -39,8 +38,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getUserById.fulfilled, (state, { payload }) => {
-        const { user } = payload;
-        state.user = user;
+        state.user = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -49,8 +47,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(updateUser.fulfilled, (state, { payload }) => {
-        const { user } = payload;
-        state.user = user;
+        state.user = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -59,8 +56,6 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(deleteUser.fulfilled, (state, { payload }) => {
-        const { users } = payload;
-        state.users = users;
         state.status = DataStatusEnum.SUCCESS;
     });
     

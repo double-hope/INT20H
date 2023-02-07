@@ -26,8 +26,6 @@ class Profile {
     }
 
     addMealToProfile(path, payload) {
-        console.log(payload);
-        
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.POST,
             payload: JSON.stringify(payload),
@@ -50,10 +48,7 @@ class Profile {
         });
     }
 
-
     addIngredientToProfile(path, payload) {
-        console.log(payload);
-        
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.POST,
             payload: JSON.stringify(payload),
@@ -61,7 +56,7 @@ class Profile {
         });
     }
 
-    deleteIngredientFromProfile(params: RequestDTO) {
+    deleteIngredientFromProfile(params: RequestDTO) {  
         const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.DELETE,

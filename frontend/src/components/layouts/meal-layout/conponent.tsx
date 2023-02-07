@@ -22,10 +22,11 @@ const MealLayout = () => {
       <div css={styles.alphabet}>
         {alphabet.map(letter => <div key={letter} choosen-letter={`${choosen === letter}`} onClick={() => setChoosen(letter)}>{letter}</div>)}
       </div>
-
+      
       <div css={styles.layout}>
-        {
-          meals.map(meal => <RecipeItem key={meal.strMeal} img={meal.strMealThumb} item={meal} />)
+        { !!meals.length
+          ? meals.map(meal => <RecipeItem key={meal.strMeal} img={meal.strMealThumb} item={meal} />)
+          : <div style={{width: '100%', textAlign: 'center', gridColumn: 'span 2'}}>No recipes on letter {choosen}</div>
         }
       </div>
     </div>

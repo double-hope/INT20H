@@ -41,8 +41,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getIngredientByName.fulfilled, (state, { payload }) => {
-        const { ingredient } = payload;
-        state.ingredient = ingredient;
+        state.ingredient = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
 
