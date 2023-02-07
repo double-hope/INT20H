@@ -12,8 +12,7 @@ export const burgerMenu = ({ colors }: Theme) => css`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s;
-    transform: translateX(-80%);
+    transition: transform .5s;
     box-shadow: 0 0 10px ${colors.black};
 `;
 

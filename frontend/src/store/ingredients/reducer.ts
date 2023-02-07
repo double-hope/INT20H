@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
-import { getAllIngredients, getIngredientByName, getIngredientsByType, getAllIngredientsTypes } from './actions';
+import { getAllIngredients, getIngredientByName, getIngredientsByPartName, getIngredientsByType, getAllIngredientsTypes } from './actions';
 
 interface Ingredient {
     idIngredient: string;
@@ -20,6 +20,7 @@ const INGREDIENTS_INITIAL_STATE: typeof INGREDIENT_INITIAL_STATE[] = [];
 
 const initialState = {
     ingredients: INGREDIENTS_INITIAL_STATE,
+    searchedIngredients: INGREDIENTS_INITIAL_STATE,
     ingredient: INGREDIENT_INITIAL_STATE,
     types: [],
     status: DataStatusEnum.IDLE,
@@ -41,7 +42,16 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getIngredientByName.fulfilled, (state, { payload }) => {
-        state.ingredient = payload;
+        state.searchedIngredients = payload;
+        state.status = DataStatusEnum.SUCCESS;
+    });
+
+    builder.addCase(getIngredientsByPartName.pending, (state) => {
+        state.status = DataStatusEnum.PENDING;
+    });
+    
+    builder.addCase(getIngredientsByPartName.fulfilled, (state, { payload }) => {
+        state.searchedIngredients = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
 
