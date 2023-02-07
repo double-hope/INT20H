@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
 
-export type GrosseriesLayoutProps = {
+export type GroceriesLayoutProps = {
     children?: string | ReactNode | ReactNode[];
 }
