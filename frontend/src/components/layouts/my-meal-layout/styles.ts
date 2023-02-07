@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import type { Theme } from '@emotion/react';
 
 export const wrapper = () => css`
     width: 100%;
@@ -17,5 +18,15 @@ export const layout = () => css`
 
     & div:nth-of-type(3n + 2) {
         grid-row: span 2;
+    }
+`;
+
+export const message = ({colors, radiuses}: Theme) => css`
+    & * {
+        border-radius: ${radiuses.xlg};
+        background-color: ${colors.light};
+        color: ${colors.black};
+        padding: 10px;
+        text-align: center;
     }
 `;

@@ -12,9 +12,14 @@ export const burgerMenu = ({ colors }: Theme) => css`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s;
+    transition: transform .5s;
     transform: translateX(-80%);
     box-shadow: 0 0 10px ${colors.black};
+
+    @media all and (max-width: 800px) {
+        left: 0;
+        right: 0;
+    }
 `;
 
 export const triggerWrapper = () => css`
