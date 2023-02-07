@@ -16,15 +16,12 @@ const MyIngredientItem = ({ number, id, name }: ProductFlagItemProps) => {
     if(!usersIngredients) dispatch(getSavedIngredients(null));
   }, [])
 
-  const toggleSaved = () => {
+  const toggleAdded = () => {
+    if(!isAdded) dispatch(addIngredientToProfile({externalId: id}));
+    else dispatch(deleteIngredientFromProfile({externalIngredientId: id}));
     setIsAdded(!isAdded);
   }
-
-  useEffect(() => {
-    if(isAdded) dispatch(addIngredientToProfile({externalId: id}));
-    else dispatch(deleteIngredientFromProfile({externalIngredientId: id}));
-  }, [isAdded]);
-
+  
   useEffect(() => {
     if(status === DataStatusEnum.SUCCESS) {
       setIsAdded(!!usersIngredients.find(item => item.idIngredient === id));
@@ -35,7 +32,7 @@ const MyIngredientItem = ({ number, id, name }: ProductFlagItemProps) => {
     <div css={styles.wrapper}>
         <div css={styles.number}>{number}</div>
         <div css={styles.name}>{name}</div>
-        <div css={styles.flag} added-item={`${isAdded}`} onClick={toggleSaved}> {isAdded ? '-' : '+'} </div>
+        <div css={styles.flag} added-item={`${isAdded}`} onClick={toggleAdded}> {isAdded ? '-' : '+'} </div>
     </div>
   )
 }

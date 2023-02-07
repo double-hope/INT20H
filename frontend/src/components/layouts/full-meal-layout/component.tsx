@@ -40,13 +40,10 @@ const FullMealLayout = ({ meal }: FullMealLayoutProps) => {
     
 
     const toggleMarked = () => {
+        if(!saved) dispatch(addMealToProfile({externalId: meal.idMeal}));
+        else dispatch(deleteMealFromProfile({externalMealId: meal.idMeal}));
         setSaved(!saved);
     }
-
-    useEffect(() => {
-        if(saved) dispatch(addMealToProfile({externalId: meal.idMeal}));
-        else dispatch(deleteMealFromProfile({externalMealId: meal.idMeal}));
-    }, [saved]);
 
     return (
         <div css={styles.layout}>
