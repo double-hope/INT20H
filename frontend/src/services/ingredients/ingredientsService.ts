@@ -1,3 +1,4 @@
+import { RequestDTO } from 'common/dto';
 import { ApiPath, HttpMethodEnum } from 'common/enums';
 import { Http } from 'services/http/httpService';
 
@@ -24,23 +25,23 @@ class Ingredients {
         });
     }
 
-    getIngredientByName(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    getIngredientByName(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
         });
     }
 
-    getIngredientsByType(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    getIngredientsByType(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
         });
     }
 
-    getAllIngredientsTypes(path) {
+    getAllIngredientsTypes(path) {    
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
@@ -49,14 +50,6 @@ class Ingredients {
 
     _getUrl(path = '') {
         return `${this._baseURL}${this._basePath}${path}`;
-    }
-
-    _getQueryString(obj) {
-        const keyValuePairs = [];
-        for (const key in obj) {
-            keyValuePairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-        }
-        return keyValuePairs.join('&');
     }
 }
 

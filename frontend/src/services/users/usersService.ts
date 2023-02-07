@@ -1,3 +1,4 @@
+import { RequestDTO } from 'common/dto';
 import { ApiPath, HttpMethodEnum } from 'common/enums';
 import { Http } from 'services/http/httpService';
 
@@ -24,9 +25,8 @@ class Users {
         });
     }
 
-
-    getUserById(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    getUserById(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
@@ -37,13 +37,13 @@ class Users {
         const query = !!params.sort ? '?' + this._getQueryString(params) : '';
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.PUT,
-            payload,
+            payload: JSON.stringify(payload),
             contentType: 'application/json'
         })
     }
 
-    deleteUser(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    deleteUser(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.DELETE,
             contentType: 'application/json'

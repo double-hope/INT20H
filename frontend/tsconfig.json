@@ -9,6 +9,7 @@
             "common/*": ["common/*"],
             "components/*": ["components/*"],
             "context/*": ["context/*"],
+            "helpers/*": ["helpers/*"],
             "hooks/*": ["hooks/*"],
             "pages/*": ["pages/*"],
             "providers/*": ["providers/*"],

@@ -1,6 +1,4 @@
 export type FoodItemProps = {
+    id: string;
     name: string;
-    img: string;
-    added: boolean;
-    myIngredients: boolean;
 }

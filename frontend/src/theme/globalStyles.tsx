@@ -34,6 +34,7 @@ export const globalStyles = (theme: Theme) => css`
 
   body::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
   }
   
   body::-webkit-scrollbar-track {

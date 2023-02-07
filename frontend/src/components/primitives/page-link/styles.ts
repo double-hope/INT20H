@@ -6,13 +6,13 @@ export const wrapper = ({ colors, fontSizes, radiuses }: Theme) => css`
     justify-content: center;
     position: relative;
     background-color: ${colors.text};
-    width: 300px;
+    width: 250px;
     padding: 40px;
     border-radius: ${radiuses.md};
     transition: all .2s;
     cursor: pointer;
     font-family: 'Alef';
-    font-size: ${fontSizes.category};
+    font-size: ${fontSizes.icons};
     color: ${colors.light};
     text-decoration: none;
 

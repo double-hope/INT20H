@@ -4,7 +4,7 @@ import type { Theme } from '@emotion/react';
 export const wrapper = ({fontSizes}: Theme) => css`
     display: flex;
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     gap: 10px;
     margin: 0 20px;
 
@@ -15,19 +15,22 @@ export const wrapper = ({fontSizes}: Theme) => css`
         height: 40px;
         font-weight: 600;
         font-family: 'Mohave';
-        font-size: ${fontSizes.icons};
+        font-size: ${fontSizes.body};
     }
 `;
 
 export const amount = ({ colors, radiuses }: Theme) => css`
+    width: 100px;
     border: 1px solid ${colors.black};
-    padding: 0 30px;
+    padding: 0 20px;
     border-radius: ${radiuses.lg};
     color: ${colors.light};
     -webkit-text-stroke: .25px ${colors.text};
 `;
 
 export const name = ({ colors, radiuses }: Theme) => css`
+    flex-grow: 1;
+    max-width: 200px;
     padding: 0 30px;
     border-radius: ${radiuses.lg};
     color: ${colors.light};

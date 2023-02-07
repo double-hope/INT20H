@@ -7,6 +7,7 @@ import { users as usersService } from 'services';
 import { auth, meals, ingredients, profile, users } from './rootReducer';
 
 const  middleware = getDefaultMiddleware({
+    serializableCheck: false,
     thunk: {
         extraArgument: {
             authService,

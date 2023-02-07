@@ -1,11 +1,10 @@
 import { ButtonEnum, DataStatusEnum, InputEnum } from 'common/enums';
-import { SignLayout } from 'components/layouts/sign-layout';
-import { Button } from 'components/primitives/button/component';
-import { Input } from 'components/primitives/input';
+import { SignLayout, Button, Input } from 'components';
 import { AuthContext } from 'context/auth';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import React, { useContext, useEffect, useState } from 'react';
 import { signUp } from 'store/auth';
+import jwtDecode from 'jwt-decode';
 
 type SignUpProps = {
   toggleModals: (value: boolean) => void;
@@ -36,14 +35,13 @@ const SignUp = ({ toggleModals }: SignUpProps) => {
 
   useEffect(() => {
     if(status === DataStatusEnum.SUCCESS) {
+      sessionStorage.setItem('userId', jwtDecode(tokens.accessToken)['userId']);
       sessionStorage.setItem('accessToken', tokens.accessToken);
       sessionStorage.setItem('refreshToken', tokens.refreshToken);
       setAuth(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
-
-  console.log(tokens);
 
   return (
     <>

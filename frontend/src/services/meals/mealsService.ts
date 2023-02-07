@@ -1,3 +1,4 @@
+import { RequestDTO } from 'common/dto';
 import { ApiPath, HttpMethodEnum } from 'common/enums';
 import { Http } from 'services/http/httpService';
 
@@ -17,24 +18,24 @@ class Meals {
         this._basePath = ApiPath.MEALS;
     }
 
-    getMealByExternalId(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    getMealByExternalId(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
         });
     }
 
-    getMealByFirstLetter(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    getMealByFirstLetter(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
         });
     }
 
-    getAvailableMealsByFirstLetter(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    getAvailableMealsByFirstLetter(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}available`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.GET,
             contentType: 'application/json'
@@ -43,14 +44,6 @@ class Meals {
 
     _getUrl(path = '') {
         return `${this._baseURL}${this._basePath}${path}`;
-    }
-
-    _getQueryString(obj) {
-        const keyValuePairs = [];
-        for (const key in obj) {
-            keyValuePairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-        }
-        return keyValuePairs.join('&');
     }
 }
 
