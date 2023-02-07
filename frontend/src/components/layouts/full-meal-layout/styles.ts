@@ -140,9 +140,11 @@ export const recipe = ({ fontSizes, radiuses, colors }: Theme) => css`
         transform: translateX(-20px);
         list-style: none;
         counter-reset: item;
+        width: 90%;
     }
 
     & li {
+        position: relative;
         counter-increment: item;
     }
 
@@ -151,13 +153,14 @@ export const recipe = ({ fontSizes, radiuses, colors }: Theme) => css`
         
     }
 
-    & li span {
+    & li p {
         border-radius: ${radiuses.lg};
         border: 1px solid ${colors.text};
         padding: 10px 20px;
     }
 
     & li:before {
+        position: absolute;
         margin-right: 10px;
         content: counter(item);
         background: ${colors.text};
@@ -166,6 +169,9 @@ export const recipe = ({ fontSizes, radiuses, colors }: Theme) => css`
         width: 1.2em;
         text-align: center;
         display: inline-block;
+        left: -40px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     & h3 {
@@ -188,4 +194,15 @@ export const video = ({ fontSizes }: Theme) => css`
         margin: 10px;
         width: 90%;
     }
+`;
+
+export const link = ({colors}: Theme) => css`
+    color: ${colors.black};
+    text-decoration: none;
+
+    &:hover {
+        color: ${colors.accent};
+        text-decoration: underline;
+    }
+
 `;

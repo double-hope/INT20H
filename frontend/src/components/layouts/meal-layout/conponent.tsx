@@ -11,7 +11,6 @@ const MealLayout = () => {
   const { meals } = useAppSelector(state => state.meals);
 
   useEffect(() => {
-    console.log({firstLetter: choosen})
     dispatch(getMealByFirstLetter({firstLetter: choosen}));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [choosen]);

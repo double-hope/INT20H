@@ -1,27 +1,30 @@
-import { recipeMock } from 'assets/mocks';
 import { BackgroundEnum, FooterEnum } from 'common/enums';
 import { BackgroundImage } from 'components/background';
 import { BurgerMenu } from 'components/burger-menu';
-import { MealLayout } from 'components/layouts/meal-layout';
+import { MyMealLayout } from 'components/layouts/my-meal-layout';
 import { Avatar } from 'components/primitives/avatar';
 import { Footer } from 'components/primitives/footer';
 import { Header } from 'components/primitives/header';
-import { RecipeItem } from 'components/recipe-item';
-import React from 'react';
+import { useAppDispatch, useAppSelector } from 'hooks/store';
+import React, { useEffect } from 'react';
+import { getSavedMeals } from 'store/profile';
 
 const MyMeals = () => {
   
+  const dispatch = useAppDispatch();
+  const { usersMeals } = useAppSelector(state => state.profile);
+
+  useEffect(() => {
+    dispatch(getSavedMeals(null));
+  }, []);
+
   return (
     <>
       <Header>  
         <Avatar avatar={null} />
       </Header>
       <BurgerMenu />
-      {/* <MealLayout>
-        {
-          recipeMock.map(item => <RecipeItem key={item.name} img={item.img} item={item} />)
-        }
-      </MealLayout> */}
+      {!!usersMeals && <MyMealLayout meals={usersMeals} />}
       <BackgroundImage type={BackgroundEnum.FILLED} />
       <Footer type={FooterEnum.LIGHT}/>
     </>

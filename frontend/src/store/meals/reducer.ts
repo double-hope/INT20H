@@ -1,6 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
 import { getMealByExternalId, getMealByFirstLetter, getAvailableMealsByFirstLetter } from './actions';
+import { Ingredient } from 'common/dto';
 
 interface Recipe {
     recipeComplexity: string;
@@ -9,7 +10,7 @@ interface Recipe {
 
 interface Meal {
     idMeal: string;
-    ingredients: {};
+    ingredients: Map<Ingredient, string>;
     recipe: Recipe;
     strArea: string;
     strCategory: string;
@@ -26,7 +27,7 @@ const RECIPE_INITIAL_STATE: Recipe = {
 
 const MEAL_INITIAL_STATE: Meal = {
     idMeal: null,
-    ingredients: {},
+    ingredients: null,
     recipe: RECIPE_INITIAL_STATE,
     strArea: null,
     strCategory: null,

@@ -43,8 +43,6 @@ const SignUp = ({ toggleModals }: SignUpProps) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
-  console.log(tokens);
-
   return (
     <>
       <SignLayout>

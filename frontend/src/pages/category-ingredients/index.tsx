@@ -19,12 +19,10 @@ const CategoryIngredients = () => {
   const locale = useLocation();
   
   useEffect(() => {
-    dispatch(getIngredientsByType({type: locale.pathname.split('/').pop()}))
-    // console.log(locale.pathname.split('/').pop() === 'all');
-    // dispatch(locale.pathname.split('/').pop() === 'all'
-    //   ? getAllIngredients(null)
-    //   : getIngredientsByType({type: locale.pathname.split('/').pop()})
-    //   );
+    dispatch(locale.pathname.split('/').pop() === 'all'
+      ? getAllIngredients(null)
+      : getIngredientsByType({type: locale.pathname.split('/').pop()})
+      );
   }, [])
 
   useEffect(() => {    

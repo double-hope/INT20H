@@ -20,14 +20,18 @@ export const wrapper = ({fontSizes}: Theme) => css`
 `;
 
 export const amount = ({ colors, radiuses }: Theme) => css`
+    flex-grow: 1;
+    max-width: 200px;
     border: 1px solid ${colors.black};
-    padding: 0 30px;
+    padding: 0 20px;
     border-radius: ${radiuses.lg};
     color: ${colors.light};
     -webkit-text-stroke: .25px ${colors.text};
 `;
 
 export const name = ({ colors, radiuses }: Theme) => css`
+    flex-grow: 10;
+    max-width: 200px;
     padding: 0 30px;
     border-radius: ${radiuses.lg};
     color: ${colors.light};

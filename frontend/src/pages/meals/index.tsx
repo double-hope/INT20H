@@ -1,4 +1,3 @@
-import { recipeMock } from 'assets/mocks';
 import { BackgroundEnum, FooterEnum } from 'common/enums';
 import { BackgroundImage } from 'components/background';
 import { BurgerMenu } from 'components/burger-menu';

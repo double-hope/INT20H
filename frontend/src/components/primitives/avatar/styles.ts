@@ -5,6 +5,7 @@ export const wrapper = () => css`
     position: absolute;
     top: 20px;
     right: 20px;
+    cursor: pointer;
 `;
 
 export const avatar = ({ radiuses, iconSizes }: Theme) => css`

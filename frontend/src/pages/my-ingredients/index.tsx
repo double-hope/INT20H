@@ -9,40 +9,32 @@ import { Header } from 'components/primitives/header';
 import { IngredientsItem } from 'components/ingredients-item';
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
-import { getAllIngredientsTypes } from 'store/ingredients';
-import { ingredientsImages } from 'assets/images/ingredients';
+import { getSavedIngredients } from 'store/profile';
 
-const Ingredients = () => {
-  const [ allTypes, setAllTypes ] = useState([]);
+const MyIngredients = () => {
+  const [ ingredients, setIngredients ] = useState([]);
 
   const dispatch = useAppDispatch();
-  const { status, types } = useAppSelector(state => state.ingredients);
+  const { status, usersIngredients } = useAppSelector(state => state.profile);
 
   useEffect(() => {
-    if(!allTypes.length)
-      dispatch(getAllIngredientsTypes(null));
+    if(!ingredients.length)
+      dispatch(getSavedIngredients(null));
   }, []);
 
   useEffect(() => {
     if(status === DataStatusEnum.SUCCESS) {
-      setAllTypes([]);
+      setIngredients(usersIngredients);
     }
   }, [status]);
-
-  useEffect(() => {
-    if(status === DataStatusEnum.SUCCESS && !allTypes.length) {
-      types.map((item, key) => setAllTypes((prev) => [...prev, {name: item, img: ingredientsImages[key]}]));
-    }
-  }, [allTypes]);
   
   return (
     <>
       <Header>
         <Avatar avatar={null} />
       </Header>
-      <IngredientsLayout name='Ingredients'>
-        <IngredientsItem key={0} name='All ingredients' img={ingredientsImages[ingredientsImages.length - 1]} />
-        {allTypes.map(type => <IngredientsItem key={type.name} name={type.name} img={type.img} />)}
+      <IngredientsLayout name='My ingredients'>
+        {!!ingredients && ingredients.map(type => <IngredientsItem key={type.name} name={type.name} img={type.img} />)}
       </IngredientsLayout>
       <Footer type={FooterEnum.LIGHT} />
       <BackgroundImage type={BackgroundEnum.FILLED} />
@@ -51,4 +43,4 @@ const Ingredients = () => {
   )
 }
 
-export { Ingredients };
+export { MyIngredients };

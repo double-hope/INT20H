@@ -3,9 +3,9 @@ import { ActionType, PathType } from './common';
 import { MealsByIdDTO, MealsByLetterDTO } from 'common/dto';
 
 const getMealByExternalId =  createAsyncThunk(ActionType.GET_BY_ID, async (params: MealsByIdDTO, { extra }: any) => ({
-    meal: await extra.mealsService.getMealByExternalId( PathType.GET_BY_ID, params.mealExternalId, {
+    meal: await extra.mealsService.getMealByExternalId( {path: PathType.GET_BY_ID, params, extra: {
         ...params
-    }),
+    }}),
 }));
 
 const getMealByFirstLetter =  createAsyncThunk(ActionType.GET_BY_LETTER, async (params: MealsByLetterDTO, { extra }: any) => ({
