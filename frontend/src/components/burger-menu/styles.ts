@@ -14,6 +14,7 @@ export const burgerMenu = ({ colors }: Theme) => css`
     align-items: center;
     transition: all .5s;
     transform: translateX(-80%);
+    box-shadow: 0 0 10px ${colors.black};
 `;
 
 export const triggerWrapper = () => css`

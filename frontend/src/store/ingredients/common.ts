@@ -7,8 +7,8 @@ const enum ActionType {
 
 const enum PathType {
     GET_ALL=  '/',
-    GET_BY_NAME = '/name/:name',
-    GET_BY_TYPE = '/type/:type',
+    GET_BY_NAME = '/name/',
+    GET_BY_TYPE = '/type/',
     GET_TYPES = '/types',
 };
 

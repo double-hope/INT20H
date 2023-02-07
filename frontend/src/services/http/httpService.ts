@@ -9,7 +9,7 @@ interface HttpProps {
 }
 
 class Http {
-    load(url, options: HttpProps){
+    load(url, options: HttpProps){ 
         const { method = HttpMethodEnum.GET, payload = null, contentType } = options;
         const headers = this._getHeaders({
             contentType,
@@ -32,8 +32,8 @@ class Http {
             headers.append(HttpHeaderEnum.CONTENT_TYPE, contentType);
         }
 
-        if(sessionStorage.getItem('token')) {
-            headers.append(HttpHeaderEnum.AUTHORIZATION, `Bearer ${sessionStorage.getItem('token')}`);
+        if(sessionStorage.getItem('accessToken')) {
+            headers.append(HttpHeaderEnum.AUTHORIZATION, `Bearer ${sessionStorage.getItem('accessToken')}`);
         }
 
         return headers;

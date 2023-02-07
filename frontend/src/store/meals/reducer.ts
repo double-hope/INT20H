@@ -1,9 +1,46 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
 import { getMealByExternalId, getMealByFirstLetter, getAvailableMealsByFirstLetter } from './actions';
+import { Ingredient } from 'common/dto';
+
+interface Recipe {
+    recipeComplexity: string;
+    steps: [string];
+}
+
+interface Meal {
+    idMeal: string;
+    ingredients: Map<Ingredient, string>;
+    recipe: Recipe;
+    strArea: string;
+    strCategory: string;
+    strMeal: string;
+    strMealThumb: string;
+    strTags: [string];
+    strYoutube: string;
+}
+
+const RECIPE_INITIAL_STATE: Recipe = {
+    recipeComplexity: null,
+    steps: [null],
+}
+
+const MEAL_INITIAL_STATE: Meal = {
+    idMeal: null,
+    ingredients: null,
+    recipe: RECIPE_INITIAL_STATE,
+    strArea: null,
+    strCategory: null,
+    strMeal: null,
+    strMealThumb: null,
+    strTags: [null],
+    strYoutube: null,
+}
+
+const MEALS_INITIAL_STATE: typeof MEAL_INITIAL_STATE[] = [];
 
 const initialState = {
-    meals: [],
+    meals: MEALS_INITIAL_STATE,
     meal: null,
     status: DataStatusEnum.IDLE
 }
@@ -24,9 +61,8 @@ const reducer = createReducer(initialState, (builder) => {
         state.status = DataStatusEnum.PENDING;
     });
 
-    builder.addCase(getMealByFirstLetter.fulfilled, (state, { payload }) => {
-        const { meals } = payload;
-        state.meal = meals;
+    builder.addCase(getMealByFirstLetter.fulfilled, (state, { payload }) => {const { meals } = payload;
+        state.meals = meals;
         state.status = DataStatusEnum.SUCCESS;
     });
 

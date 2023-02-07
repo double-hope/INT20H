@@ -7,9 +7,9 @@ const enum ActionType {
 
 const enum PathType {
     GET_ALL = '/',
-    GET = '/:id',
-    UPDATE = '/:id',
-    DELETE = '/:id',
+    GET = '/',
+    UPDATE = '/',
+    DELETE = '/',
 };
 
 export { ActionType, PathType };

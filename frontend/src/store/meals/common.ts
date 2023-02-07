@@ -5,9 +5,8 @@ const enum ActionType {
 };
 
 const enum PathType {
-    GET_BY_ID = '/id/:mealExternalId',
-    GET_BY_LETTER = '/letter/:firstLetter',
-    GET_AVAILABLE_BY_LETTER = '/letter/:firstLetter/available',
+    GET_BY_ID = '/id/',
+    GET_BY_LETTER = '/letter/',
 };
 
 export { ActionType, PathType };

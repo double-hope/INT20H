@@ -2,9 +2,25 @@ import { createReducer } from '@reduxjs/toolkit';
 import { DataStatusEnum } from 'common/enums';
 import { getAllIngredients, getIngredientByName, getIngredientsByType, getAllIngredientsTypes } from './actions';
 
+interface Ingredient {
+    idIngredient: string;
+    strDescription: string;
+    strIngredient: string;
+    strType: string;
+}
+
+const INGREDIENT_INITIAL_STATE: Ingredient = {
+    idIngredient: null,
+    strDescription: null,
+    strIngredient: null,
+    strType: null,
+}
+
+const INGREDIENTS_INITIAL_STATE: typeof INGREDIENT_INITIAL_STATE[] = [];
+
 const initialState = {
-    ingredients: [],
-    ingredient: null,
+    ingredients: INGREDIENTS_INITIAL_STATE,
+    ingredient: INGREDIENT_INITIAL_STATE,
     types: [],
     status: DataStatusEnum.IDLE,
 }
@@ -16,8 +32,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
 
     builder.addCase(getAllIngredients.fulfilled, (state, { payload }) => {
-        const { ingredients } = payload;
-        state.ingredients = ingredients;
+        state.ingredients = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -36,8 +51,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getIngredientsByType.fulfilled, (state, { payload }) => {
-        const { ingredients } = payload;
-        state.ingredients = ingredients;
+        state.ingredients = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
     
@@ -46,8 +60,7 @@ const reducer = createReducer(initialState, (builder) => {
     });
     
     builder.addCase(getAllIngredientsTypes.fulfilled, (state, { payload }) => {
-        const { types } = payload;
-        state.types = types;
+        state.types = payload;
         state.status = DataStatusEnum.SUCCESS;
     });
 });

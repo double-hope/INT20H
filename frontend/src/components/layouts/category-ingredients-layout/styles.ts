@@ -7,7 +7,10 @@ export const wrapper = ({ spaces }: Theme) => css`
     text-align: center;
 `;
 
-export const flex = () => css`
+export const flex = ({ colors, radiuses }: Theme) => css`
+    background-color: ${colors.light};
+    padding: 20px;
+    border-radius: ${radiuses.xlg};
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

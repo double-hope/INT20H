@@ -1,3 +1,4 @@
+import { RequestDTO } from 'common/dto';
 import { ApiPath, HttpMethodEnum } from 'common/enums';
 import { Http } from 'services/http/httpService';
 
@@ -25,15 +26,17 @@ class Profile {
     }
 
     addMealToProfile(path, payload) {
+        console.log(payload);
+        
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.POST,
-            payload,
+            payload: JSON.stringify(payload),
             contentType: 'application/json'
         });
     }
 
-    deleteMealFromProfile(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    deleteMealFromProfile(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.DELETE,
             contentType: 'application/json'
@@ -49,15 +52,17 @@ class Profile {
 
 
     addIngredientToProfile(path, payload) {
+        console.log(payload);
+        
         return this._http.load(this._getUrl(path), {
             method: HttpMethodEnum.POST,
-            payload,
+            payload: JSON.stringify(payload),
             contentType: 'application/json'
         });
     }
 
-    deleteIngredientFromProfile(params) {
-        const query = !!params.sort ? '?' + this._getQueryString(params) : '';
+    deleteIngredientFromProfile(params: RequestDTO) {
+        const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
             method: HttpMethodEnum.DELETE,
             contentType: 'application/json'
@@ -66,14 +71,6 @@ class Profile {
 
     _getUrl(path = '') {
         return `${this._baseURL}${this._basePath}${path}`;
-    }
-
-    _getQueryString(obj) {
-        const keyValuePairs = [];
-        for (const key in obj) {
-            keyValuePairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
-        }
-        return keyValuePairs.join('&');
     }
 }
 

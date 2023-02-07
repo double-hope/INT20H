@@ -5,3 +5,5 @@ export * from './full-recipe';
 export * from './ingredients';
 export * from './profile';
 export * from './category-ingredients';
+export * from './my-meals';
+export * from './my-ingredients';
