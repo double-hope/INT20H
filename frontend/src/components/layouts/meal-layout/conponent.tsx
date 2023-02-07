@@ -3,7 +3,7 @@ import * as styles from './styles';
 import { alphabet } from 'assets/mocks/alphabet';
 import { RecipeItem } from 'components/recipe-item';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
-import { getMealByFirstLetter } from 'store/meals';
+import { getAvailableMealsByFirstLetter, getMealByFirstLetter, getMealByName } from 'store/meals';
 import { SearchInput } from 'components/primitives';
 
 const MealLayout = () => {
@@ -18,11 +18,11 @@ const MealLayout = () => {
   }, [choosen]);
 
   const searchByName = () => {
-    // TODO
+    dispatch(getMealByName({name}));
   }
 
   const searchByMyIngredients = () => {
-    // TODO
+    dispatch(getAvailableMealsByFirstLetter({firstLetter: choosen}));
   }
 
   return (
