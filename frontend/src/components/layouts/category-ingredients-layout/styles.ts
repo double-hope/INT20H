@@ -56,3 +56,10 @@ export const button = ({ colors, radiuses, fontSizes }: Theme) => css`
         left: 0;
     } 
 `;
+
+export const search = () => css`
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+`;

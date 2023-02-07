@@ -14,7 +14,7 @@ const MealLayout = () => {
     dispatch(getMealByFirstLetter({firstLetter: choosen}));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [choosen]);
-  
+
   return (
     <div css={styles.wrapper}>
       <h1>Meals</h1>
@@ -22,7 +22,7 @@ const MealLayout = () => {
       <div css={styles.alphabet}>
         {alphabet.map(letter => <div key={letter} choosen-letter={`${choosen === letter}`} onClick={() => setChoosen(letter)}>{letter}</div>)}
       </div>
-
+      
       <div css={styles.layout}>
         { !!meals.length
           ? meals.map(meal => <RecipeItem key={meal.strMeal} img={meal.strMealThumb} item={meal} />)

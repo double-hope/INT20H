@@ -6,3 +6,12 @@ export type InputProps = {
     setValue: (value: string) => void;
     type: InputEnum;
 }
+
+
+export type SearchInputProps = {
+    placeholder: string;
+    value: string;
+    setValue: (value: string) => void;
+    callback: () => void;
+    type: InputEnum;
+}
