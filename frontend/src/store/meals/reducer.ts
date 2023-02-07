@@ -61,7 +61,8 @@ const reducer = createReducer(initialState, (builder) => {
         state.status = DataStatusEnum.PENDING;
     });
 
-    builder.addCase(getMealByFirstLetter.fulfilled, (state, { payload }) => {const { meals } = payload;
+    builder.addCase(getMealByFirstLetter.fulfilled, (state, { payload }) => {
+        const { meals } = payload;
         state.meals = meals;
         state.status = DataStatusEnum.SUCCESS;
     });

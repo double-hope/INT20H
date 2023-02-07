@@ -25,7 +25,6 @@ class Users {
         });
     }
 
-
     getUserById(params: RequestDTO) {
         const query = `${params.path}${Object.keys(params.params).map((key) => params.params[key as keyof typeof params.params] + '/')}`
         return this._http.load(this._getUrl(query), {
