@@ -42,9 +42,14 @@ const CategoryIngredientsLayout = ({ name, items }: CategoryIngredientsLayoutPro
         <SearchInput placeholder='Search' value={searchName} setValue={setSearchName} callback={searchByName} />
       </div>
       <div css={styles.flex}>
-        {
-          !!searchedIngredients.length && !!searchName.length
-          ? searchedIngredients.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)
+        {!!searchName.length
+           
+          ? <>
+            {!!searchedIngredients.length
+              ? searchedIngredients.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)
+              : <div style={{fontSize: '30px'}}>Found no ingredients</div>
+            }
+          </>
           
           : <>{status === DataStatusEnum.SUCCESS
             ? items.map((item, key) => <MyIngredientItem key={item.idIngredient} number={key + 1} id={item.idIngredient} name={item.strIngredient} />)
